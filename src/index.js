@@ -4,21 +4,20 @@ import Bar from './components/bar';
 import Reboot from 'material-ui/Reboot';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/about';
-import NotFoundPage from './components/notFoundPage';
-import Welcome from './components/welcome';
-import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
+
+// COMPONENTS
+import NotFoundPage from './components/notFoundPage';
+import Welcome from './components/welcome';
+import Menu from './components/menu';
+import Galery from './components/galery';
 
 const styles = theme => ({
     root: {
         flexGrow: 1,
-        marginTop: 30
-    },
-    paper: {
-        padding: 16,
-        textAlign: 'center',
-        color: theme.palette.text.secondary
+        marginTop: 30,
+        background: 'red'
     },
     rightLeft: {
         paddingLeft: 8
@@ -29,20 +28,22 @@ const styles = theme => ({
 });
 
 function App(props) {
-    const { classes } = props;
+    // const { classes } = props;
 
     return (
         <Router>
             <Reboot>
-                <Bar />
-                <Switch>
-                    <Route exact path="/" component={Welcome} />
-                    <Route exact strict path="/o-nas" component={About} />
-                    <Route exact strict path="/menu" component={About} />
-                    <Route exact strict path="/galeria" component={About} />
-                    <Route exact strict path="/kontakt" component={About} />
-                    <Route component={NotFoundPage} />
-                </Switch>
+                <div >
+                    <Bar />
+                    <Switch>
+                        <Route exact path="/" component={Welcome} />
+                        <Route exact strict path="/o-nas" component={About} />
+                        <Route exact strict path="/menu/:id?" component={Menu} />
+                        <Route exact strict path="/galeria" component={Galery} />
+                        <Route exact strict path="/kontakt" component={About} />
+                        <Route component={NotFoundPage} />
+                    </Switch>
+                </div>
             </Reboot>
         </Router>
     );
