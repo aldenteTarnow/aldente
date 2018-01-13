@@ -31,7 +31,7 @@ function App(props) {
     // const { classes } = props;
 
     return (
-        <Router>
+        <Router basename="/testAldente/">
             <Reboot>
                 <div >
                     <Bar />

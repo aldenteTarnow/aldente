@@ -8,6 +8,10 @@ import compose from 'recompose/compose';
 import MenuCard from './menuCard';
 import Grid from 'material-ui/Grid';
 import Hidden from 'material-ui/Hidden';
+import otherMenuImg from '../assets/otherMenu.jpg';
+import noodlesMenuImg from '../assets/noodlesMenu.jpg';
+import pizzaMenuImg from '../assets/pizzaMenu.jpg';
+import welcomePizzaImg from '../assets/welcomePizza.jpeg';
 
 const styles = theme => {
     return {
@@ -54,7 +58,7 @@ class Welcome extends React.Component {
                                 <Card className={classes.card}>
                                     <CardMedia
                                         className={classes.media2}
-                                        image="https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg?h=350&auto=compress&cs=tinysrgb"
+                                        image={welcomePizzaImg}
                                         title="ALDENTE PIZZA"
                                     />
                                     <CardContent>
@@ -122,7 +126,7 @@ class Welcome extends React.Component {
                                         path="/menu/pizza"
                                         title="PIZZA"
                                         text="Pyszne Pizze"
-                                        url="https://cdn.pixabay.com/photo/2017/12/05/20/09/pizza-3000274_960_720.jpg"
+                                        url={pizzaMenuImg}
                                     />
                                 </Grid>
                                 <Grid item xs={3}>
@@ -130,7 +134,7 @@ class Welcome extends React.Component {
                                         path="/menu/makarony"
                                         title="MAKARONY"
                                         text="Cudowne Makarony"
-                                        url="https://cdn.pixabay.com/photo/2017/10/06/17/43/noodles-2823942_960_720.jpg"
+                                        url={noodlesMenuImg}
                                     />
                                 </Grid>
                                 <Grid item xs={3}>
@@ -138,7 +142,7 @@ class Welcome extends React.Component {
                                         path="/menu/inne"
                                         title="INNE"
                                         text="Inne Dania"
-                                        url="https://cdn.pixabay.com/photo/2017/02/27/15/12/rice-2103481_960_720.jpg"
+                                        url={otherMenuImg}
                                     />
                                 </Grid>
                                 <Grid item xs />
@@ -151,7 +155,7 @@ class Welcome extends React.Component {
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.media}
-                                image="https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg?h=350&auto=compress&cs=tinysrgb"
+                                image={welcomePizzaImg}
                                 title="Włoska Pizza"
                             />
                             <CardContent>
@@ -208,19 +212,19 @@ class Welcome extends React.Component {
                             path="/menu/pizza"
                             title="PIZZA"
                             text="Pyszne Pizze"
-                            url="https://cdn.pixabay.com/photo/2017/12/05/20/09/pizza-3000274_960_720.jpg"
+                            url={pizzaMenuImg}
                         />
                         <MenuCard
                             path="/menu/makarony"
                             title="MAKARONY"
                             text="Cudowne Makarony"
-                            url="https://cdn.pixabay.com/photo/2017/10/06/17/43/noodles-2823942_960_720.jpg"
+                            url={noodlesMenuImg}
                         />
                         <MenuCard
                             path="/menu/inne"
                             title="INNE"
                             text="Inne Dania"
-                            url="https://cdn.pixabay.com/photo/2017/02/27/15/12/rice-2103481_960_720.jpg"
+                            url={otherMenuImg}
                         />
                     </Hidden>
                 </div>
