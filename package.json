@@ -2,7 +2,6 @@
   "name": "aldente-pizza-tarnow",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://aldenteTarnow.github.io/aldente",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "material-ui": "next",
