@@ -43,24 +43,21 @@ class FullWidthTabs extends React.Component {
         this.setState({ value: index });
     };
 
-    handleChangeIndexOnParams = (param) => {
-        if (!param) {
-            return null;
-        }
-        if (param === 'pizza') {
-            this.setState({ value: 0 });
-        } else if (param === 'makarony') {
-            this.setState({ value: 1 });
+    componentWillMount() {
+        const tab = (type) => window.location.pathname.endsWith(type);
 
-        } else if (param === 'inne') {
+        if (tab('/pizza')) {
+            this.setState({ value: 0 });
+        } else if (tab('/makarony')) {
+            this.setState({ value: 1 });
+        } else if (tab('/inne')) {
             this.setState({ value: 2 });
         }
-    };
+    }
 
     render() {
-        const { classes, theme, match } = this.props;
+        const { classes, theme } = this.props;
 
-        console.log(match.params);
         return (
             <div className={classes.root}>
                 <Tabs

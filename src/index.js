@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import NotFoundPage from './components/notFoundPage';
 import Welcome from './components/welcome';
 import Menu from './components/menu';
-import Galery from './components/galery';
+import Gallery from './components/gallery';
 
 const styles = theme => ({
     root: {
@@ -31,7 +31,7 @@ function App(props) {
     // const { classes } = props;
 
     return (
-        <Router basename="/testAldente/">
+        <Router basename="/aldente/">
             <Reboot>
                 <div >
                     <Bar />
@@ -39,7 +39,7 @@ function App(props) {
                         <Route exact path="/" component={Welcome} />
                         <Route exact strict path="/o-nas" component={About} />
                         <Route exact strict path="/menu/:id?" component={Menu} />
-                        <Route exact strict path="/galeria" component={Galery} />
+                        <Route exact strict path="/galeria" component={Gallery} />
                         <Route exact strict path="/kontakt" component={About} />
                         <Route component={NotFoundPage} />
                     </Switch>
