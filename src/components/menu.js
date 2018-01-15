@@ -44,7 +44,7 @@ class FullWidthTabs extends React.Component {
     };
 
     componentWillMount() {
-        const tab = (type) => window.location.pathname.endsWith(type);
+        const tab = type => window.location.pathname.endsWith(type);
 
         if (tab('/pizza')) {
             this.setState({ value: 0 });

@@ -62,9 +62,9 @@ function Bar(props) {
                             <Button
                                 color="contrast"
                                 component={Link}
-                                to="/oferta"
+                                to="/nowosci"
                             >
-                                OFERTA
+                                NOWOŚCI
                             </Button>
                             <Button
                                 color="contrast"

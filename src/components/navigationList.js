@@ -19,17 +19,17 @@ function NavigationList(props) {
     return (
         <div className={classes.root}>
             <List>
-                <ListItem button component={Link} to="/o-nas">
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="O NAS" />
-                </ListItem>
                 <ListItem button component={Link} to="/menu">
                     <ListItemIcon>
                         <DraftsIcon />
                     </ListItemIcon>
                     <ListItemText primary="MENU" />
+                </ListItem>
+                <ListItem button component={Link} to="/o-nas">
+                    <ListItemIcon>
+                        <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="O NAS" />
                 </ListItem>
                 <ListItem button component={Link} to="/galeria">
                     <ListItemIcon>
@@ -41,7 +41,7 @@ function NavigationList(props) {
                     <ListItemIcon>
                         <DraftsIcon />
                     </ListItemIcon>
-                    <ListItemText primary="OFERTA" />
+                    <ListItemText primary="NOWOŚCI" />
                 </ListItem>
                 <ListItem button component={Link} to="/kontakt">
                     <ListItemIcon>

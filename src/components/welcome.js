@@ -18,19 +18,11 @@ const styles = theme => {
         card: {
             maxWidth: '100%'
         },
-        card2: {
-            maxWidth: '60%',
-            margin: 'auto',
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            top: '15%'
-        },
         media: {
             height: 250
         },
         media2: {
-            height: 450
+            height: 465
         },
         root: {
             flexGrow: 1,

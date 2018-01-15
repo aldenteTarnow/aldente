@@ -13,32 +13,19 @@ const styles = theme => ({
         'box-shadow': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
         transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
         '&:hover': {
-            'box-shadow':
-                '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
+            'box-shadow': `0 14px 28px rgba(0,0,0,0.25), 0 20px 20px ${
+                red['500']
+            }`
         }
     },
     media: {
         height: 194
     },
-    expand: {
-        transform: 'rotate(0deg)',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest
-        })
+    onHover: {
+        color: red['500']
     },
-    expandOpen: {
-        transform: 'rotate(180deg)'
-    },
-    avatar: {
-        backgroundColor: red[500]
-    },
-    flexGrow: {
-        flex: '1 1 auto'
-    },
-    paper: {
-        padding: 16,
-        textAlign: 'center',
-        color: theme.palette.text.secondary
+    onDefault: {
+        color: '#000000de'
     },
     header: {
         height: 65,
@@ -48,15 +35,33 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends React.Component {
+    state = {
+        color: 'RecipeReviewCard-onDefault-193'
+    };
+
+    changeColor(type, data) {
+        if (type === 'hover') {
+            this.setState({ color: data.onHover });
+        } else {
+            this.setState({ color: data.onDefault });
+        }
+    }
+
     render() {
         const { classes, title, url, text, path } = this.props;
 
         return (
-            <div>
+            <div
+                onMouseLeave={() => this.changeColor('default', classes)}
+                onMouseEnter={() => this.changeColor('hover', classes)}
+            >
                 <Link to={path} style={{ textDecoration: 'none' }}>
                     <Card className={classes.card}>
                         <div className={classes.header}>
-                            <CardHeader title={title} />
+                            <CardHeader
+                                title={title}
+                                classes={{ title: this.state.color }}
+                            />
                         </div>
                         <CardMedia
                             className={classes.media}
