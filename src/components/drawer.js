@@ -7,10 +7,13 @@ import MenuIcon from 'material-ui-icons/Menu';
 import NavigationList from './navigationList';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Phone from 'material-ui-icons/Phone';
-import {green, grey} from 'material-ui/colors';
+import {green} from 'material-ui/colors';
 import Divider from 'material-ui/Divider';
 import Button from 'material-ui/Button';
-import {Link} from 'react-router-dom';
+import MobileDetect from 'mobile-detect';
+import withWidth from 'material-ui/utils/withWidth';
+import compose from 'recompose/compose';
+
 const styles = {
     list: {
         width: 250
@@ -28,7 +31,8 @@ class Panel extends React.Component {
         top: false,
         left: false,
         bottom: false,
-        right: false
+        right: false,
+        isMobile: false
     };
 
     toggleDrawer = (side, open) => () => {
@@ -37,8 +41,27 @@ class Panel extends React.Component {
         });
     };
 
+    detect() {
+        const md = new MobileDetect(navigator.userAgent);
+        const setS = (isMobile) => this.setState({isMobile});
+
+        if ((md.mobile() && md.phone()) || (md.mobile() && md.tablet())) {
+            setS(true);
+        } else {
+            setS(false);
+        }
+    }
+
+    componentDidMount() {
+        this.detect();
+    }
+
+    componentWillReceiveProps() {
+        this.detect();
+    }
+
     render() {
-        const { classes } = this.props;
+        const { classes} = this.props;
 
         const sideList = (
             <div className={classes.list}>
@@ -74,8 +97,11 @@ class Panel extends React.Component {
                             <Phone />
                         </ListItemIcon>
                         <ListItemText primary="+14 690 88 77"/>
-                        <form action="tel:14 690 88 77"><button type="submit">Call +14 690 88 77</button></form>
-                        <Button raised color="accent" onClick={()=>window.location='tel:14 690 88 77'}>Hot line</Button>
+                        {
+                            this.state.isMobile ?
+                                <Button raised dense color="primary" onClick={()=>window.location='tel:14 690 88 77'}>Zadzwoń</Button> :
+                                null
+                        }
                     </ListItem>
                 </Drawer>
             </div>
@@ -87,4 +113,4 @@ Panel.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Panel);
+export default compose(withStyles(styles), withWidth())(Panel);
