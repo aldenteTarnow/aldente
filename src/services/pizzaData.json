@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "Margherita",
+    "ingredients": ["sos pomidorowy", "ser"],
+    "small": {
+      "price": 11,
+      "size": 30
+    },
+    "big": {
+      "price": 21,
+      "size": 50
+    }
+  },
+  {
+    "id": 2,
+    "name": "Funghi",
+    "ingredients": ["sos pomidorowy", "ser", "pieczarki", "cebula"],
+    "small": {
+      "price": 12,
+      "size": 30
+    },
+    "big": {
+      "price": 22,
+      "size": 50
+    }
+  },
+  {
+    "id": 3,
+    "name": "Olive",
+    "ingredients": ["sos pomidorowy", "ser", "oliwki czarne", "oliwki zielone"],
+    "small": {
+      "price": 12,
+      "size": 30
+    },
+    "big": {
+      "price": 22,
+      "size": 50
+    }
+  },
+  {
+    "id": 4,
+    "name": "Prosciutto",
+    "ingredients": ["sos pomidorowy", "ser", "szynka"],
+    "small": {
+      "price": 14,
+      "size": 30
+    },
+    "big": {
+      "price": 24,
+      "size": 50
+    }
+  }
+]

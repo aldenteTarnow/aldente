@@ -13,6 +13,7 @@ import Welcome from './components/welcome';
 import Menu from './components/menu';
 import Gallery from './components/gallery';
 import Contact from './components/contact';
+import News from './components/news';
 
 const styles = theme => ({
     root: {
@@ -42,7 +43,7 @@ function App(props) {
                         <Route exact strict path="/o-nas" component={About} />
                         <Route exact strict path="/galeria" component={Gallery} />
                         <Route exact strict path="/kontakt" component={Contact} />
-                        <Route exact strict path="/nowosci" component={About} />
+                        <Route exact strict path="/nowosci" component={News} />
                         <Route component={NotFoundPage} />
                     </Switch>
                 </div>

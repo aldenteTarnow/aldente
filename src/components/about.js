@@ -14,10 +14,10 @@ import Hidden from 'material-ui/Hidden';
 
 const styles = theme => ({
     base: {
-        marginTop: -35,
+        // marginTop: -35,
         height: '100vh',
         background:
-            'url(https://images.pexels.com/photos/164168/pexels-photo-164168.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb)',
+            'url(https://images.pexels.com/photos/164168/pexels-photo-164168.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb) no-repeat center',
         backgroundSize: 'cover'
     },
     card: {
@@ -71,9 +71,9 @@ function SimpleMediaCard(props) {
         <div className={classes.base}>
             <div className={classes.red}>
                 <Hidden only={['sm', 'xs']}>
-                    <Grid container spacing={0} className={classes.root2}>
-                        <Grid item xs={2} />
-                        <Grid item xs={8}>
+                    <Grid container spacing={0} className={classes.base}>
+                        <Grid item xs={2} className={classes.cardSmall} />
+                        <Grid item xs={8} className={classes.cardSmall}>
                             <Card className={classes.card}>
                                 <div className={classes.root}>
                                     <GridList
@@ -138,7 +138,7 @@ function SimpleMediaCard(props) {
                                 </CardActions>
                             </Card>
                         </Grid>
-                        <Grid item xs={2} />
+                        <Grid item xs={2} className={classes.cardSmall} />
                     </Grid>
                 </Hidden>
                 <Hidden only={['lg', 'xl', 'md']}>

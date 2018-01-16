@@ -17,6 +17,8 @@ import {
     GoogleMap,
     Marker
 } from 'react-google-maps';
+import {googleMapApiKey} from '../config';
+import CALL from '../services/fbService';
 
 const styles = theme => ({
     root: {
@@ -43,8 +45,7 @@ const aldenteGeoLoc = { lat: 50.024502, lng: 20.972529 };
 
 const MapComponent = compose(
     withProps({
-        googleMapURL:
-            'https://maps.googleapis.com/maps/api/js?key=AIzaSyA0X5DRE0jN2kAiIc_HcEklmXcG0xbA6ZY&libraries=geometry,drawing,places',
+        googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&libraries=geometry,drawing,places`,
         loadingElement: <div style={{ height: `100%` }} />,
         containerElement: <div style={{ height: `400px` }} />,
         mapElement: <div style={{ height: `100%` }} />
@@ -238,6 +239,7 @@ class Welcome extends React.Component {
                                 className={classes.button}
                                 raised
                                 color="primary"
+                                onClick={() => CALL('feed')}
                             >
                                 Wyślij
                                 <Icon className={classes.rightIcon}>
