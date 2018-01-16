@@ -3,14 +3,21 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import { Link } from 'react-router-dom';
-import InboxIcon from 'material-ui-icons/Inbox';
 import DraftsIcon from 'material-ui-icons/Drafts';
+import NewReleases from 'material-ui-icons/NewReleases';
+import RestaurantMenu from 'material-ui-icons/RestaurantMenu';
+import InfoOutline from 'material-ui-icons/InfoOutline';
+import Collections from 'material-ui-icons/Collections';
+import Divider from 'material-ui/Divider';
 
 const styles = theme => ({
     root: {
         width: '100%',
         maxWidth: 360,
         backgroundColor: theme.palette.background.paper
+    },
+    div: {
+        marginBottom: 10
     }
 });
 
@@ -21,25 +28,25 @@ function NavigationList(props) {
             <List>
                 <ListItem button component={Link} to="/menu">
                     <ListItemIcon>
-                        <DraftsIcon />
+                        <RestaurantMenu />
                     </ListItemIcon>
                     <ListItemText primary="MENU" />
                 </ListItem>
                 <ListItem button component={Link} to="/o-nas">
                     <ListItemIcon>
-                        <InboxIcon />
+                        <InfoOutline />
                     </ListItemIcon>
                     <ListItemText primary="O NAS" />
                 </ListItem>
                 <ListItem button component={Link} to="/galeria">
                     <ListItemIcon>
-                        <DraftsIcon />
+                        <Collections />
                     </ListItemIcon>
                     <ListItemText primary="GALERIA" />
                 </ListItem>
-                <ListItem button component={Link} to="/oferta">
+                <ListItem button component={Link} to="/nowosci">
                     <ListItemIcon>
-                        <DraftsIcon />
+                        <NewReleases />
                     </ListItemIcon>
                     <ListItemText primary="NOWOŚCI" />
                 </ListItem>
@@ -50,6 +57,7 @@ function NavigationList(props) {
                     <ListItemText primary="KONTAKT" />
                 </ListItem>
             </List>
+            <Divider classes={{root: classes.div}}/>
         </div>
     );
 }

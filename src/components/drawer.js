@@ -5,17 +5,25 @@ import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import NavigationList from './navigationList';
-
+import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import Phone from 'material-ui-icons/Phone';
+import {green, grey} from 'material-ui/colors';
+import Divider from 'material-ui/Divider';
+import Button from 'material-ui/Button';
+import {Link} from 'react-router-dom';
 const styles = {
     list: {
         width: 250
     },
     listFull: {
         width: 'auto'
+    },
+    color: {
+        background: green['A400']
     }
 };
 
-class TemporaryDrawer extends React.Component {
+class Panel extends React.Component {
     state = {
         top: false,
         left: false,
@@ -60,14 +68,23 @@ class TemporaryDrawer extends React.Component {
                     >
                         {sideList}
                     </div>
+                    <Divider/>
+                    <ListItem className={classes.color}>
+                        <ListItemIcon>
+                            <Phone />
+                        </ListItemIcon>
+                        <ListItemText primary="+14 690 88 77"/>
+                        <form action="tel:14 690 88 77"><button type="submit">Call +14 690 88 77</button></form>
+                        <Button raised color="accent" onClick={()=>window.location='tel:14 690 88 77'}>Hot line</Button>
+                    </ListItem>
                 </Drawer>
             </div>
         );
     }
 }
 
-TemporaryDrawer.propTypes = {
+Panel.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(TemporaryDrawer);
+export default withStyles(styles)(Panel);

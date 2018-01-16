@@ -17,6 +17,7 @@
     "react-scripts": "latest"
   },
   "devDependencies": {
+    "font-awesome": "^4.7.0",
     "react-swipeable-views": "^0.12.12",
     "recompose": "^0.26.0"
   },

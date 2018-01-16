@@ -1,78 +1,127 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
-import Card, { CardContent, CardMedia } from 'material-ui/Card';
+import Card, {
+    CardHeader,
+    CardMedia,
+    CardContent,
+    CardActions
+} from 'material-ui/Card';
+import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
-import SkipPreviousIcon from 'material-ui-icons/SkipPrevious';
-import PlayArrowIcon from 'material-ui-icons/PlayArrow';
-import SkipNextIcon from 'material-ui-icons/SkipNext';
+import '../styles/test.css';
+import { blue, red } from 'material-ui/colors';
+import Icon from 'material-ui/Icon';
+import moment from 'moment';
 
 const styles = theme => ({
     card: {
-        display: 'flex',
-        width: 'auto'
+        maxWidth: 700,
+        maxHeight: 480
     },
-    details: {
-        display: 'flex',
-        flexDirection: 'column',
-        // width: '40vh'
+    media: {
+        height: 200
     },
-    content: {
-        flex: '1 0 auto',
+    expand: {
+        transform: 'rotate(0deg)',
+        transition: theme.transitions.create('transform', {
+            duration: theme.transitions.duration.shortest
+        })
     },
-    cover: {
-        width: 200,
-        height: 200,
+    expandOpen: {
+        transform: 'rotate(180deg)'
     },
-    controls: {
-        display: 'flex',
-        alignItems: 'center',
-        paddingLeft: theme.spacing.unit,
-        paddingBottom: theme.spacing.unit,
+    avatar: {
+        backgroundColor: red[500]
     },
-    playIcon: {
+    flexGrow: {
+        flex: '1 1 auto'
+    },
+    cardHeight: {
+        height: 120,
+        overflow: 'auto'
+    },
+    buttons: {
         height: 38,
-        width: 38,
+        paddingBottom: 15,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
+    fbHover: {
+        '&:hover': {
+            color: blue[500]
+        }
+    },
+    heartBeat: {
+        color: red[400]
+    }
 });
 
-function MediaControlCard(props) {
-    const { classes, theme, post } = props;
+function FbPostCard(props) {
+    const { classes, post } = props;
 
+    if (!post) {
+        return null;
+    }
     return (
         <div>
             <Card className={classes.card}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content}>
-                        <Typography type="body2">{post.message || post.story}</Typography>
-                        <Typography type="caption" color="secondary">{post.from.name}</Typography>
-                    </CardContent>
-                    <div className={classes.controls}>
-                        <IconButton aria-label="Previous">
-                            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-                        </IconButton>
-                        <IconButton aria-label="Play/pause">
-                            <PlayArrowIcon className={classes.playIcon} />
-                        </IconButton>
-                        <IconButton aria-label="Next">
-                            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-                        </IconButton>
-                    </div>
-                </div>
+                <CardHeader
+                    avatar={
+                        <Avatar aria-label="Recipe" className={classes.avatar}>
+                            <img src={post.userIcon} alt="" />
+                        </Avatar>
+                    }
+                    title={post.from.name}
+                    subheader={moment(post.created_time).format('DD-MM-YYYY')}
+                />
                 <CardMedia
-                    className={classes.cover}
-                    image={post.picture}
+                    className={classes.media}
+                    image={post.full_picture}
                     title=""
                 />
+                <CardContent className={classes.cardHeight}>
+                    <Typography component="p">
+                        {post.message || post.story}
+                    </Typography>
+                </CardContent>
+                <CardActions disableActionSpacing className={classes.buttons}>
+                    <IconButton
+                        aria-label="Lajki"
+                        disabled
+                        className={classes.heartBeat}
+                    >
+                        {post.likes > 0 ? (
+                            <Icon className="pulse">
+                                <span className="fa fa-heartbeat">
+                                    &nbsp;{post.likes}
+                                </span>
+                            </Icon>
+                        ) : (
+                            <span />
+                        )}
+                    </IconButton>
+                    <IconButton
+                        aria-label="Facebook"
+                        component={Link}
+                        to={post.link}
+                        target="_blank"
+                    >
+                        <Icon className={classes.fbHover}>
+                            <span className="fa fa-facebook-official" />
+                        </Icon>
+                    </IconButton>
+                </CardActions>
             </Card>
         </div>
     );
 }
 
-MediaControlCard.propTypes = {
-    classes: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired,
+FbPostCard.propTypes = {
+    classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(MediaControlCard);
+export default withStyles(styles)(FbPostCard);

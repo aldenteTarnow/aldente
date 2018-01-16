@@ -17,7 +17,7 @@ import {
     GoogleMap,
     Marker
 } from 'react-google-maps';
-import {googleMapApiKey} from '../config';
+import { googleMapApiKey } from '../config';
 import CALL from '../services/fbService';
 
 const styles = theme => ({
@@ -175,7 +175,7 @@ class Welcome extends React.Component {
                                 noValidate
                                 autoComplete="off"
                             >
-                                <Grid item xs={2} sm={4}  md={5} lg={5}/>
+                                <Grid item xs={2} sm={4} md={5} lg={5} />
                                 <Grid item xs={10} sm={8} md={6} lg={7}>
                                     <TextField
                                         id="firstName"
@@ -186,7 +186,7 @@ class Welcome extends React.Component {
                                         margin="normal"
                                     />
                                 </Grid>
-                                <Grid item xs={2} sm={4} md={5} lg={5}/>
+                                <Grid item xs={2} sm={4} md={5} lg={5} />
                                 <Grid item xs={10} sm={8} md={6} lg={7}>
                                     <TextField
                                         id="secondName"
@@ -197,7 +197,7 @@ class Welcome extends React.Component {
                                         margin="normal"
                                     />
                                 </Grid>
-                                <Grid item xs={2} sm={4} md={5} lg={5}/>
+                                <Grid item xs={2} sm={4} md={5} lg={5} />
                                 <Grid item xs={10} sm={8} md={6} lg={7}>
                                     <TextField
                                         id="email"
@@ -208,7 +208,7 @@ class Welcome extends React.Component {
                                         margin="normal"
                                     />
                                 </Grid>
-                                <Grid item xs={2} sm={4} md={5} lg={5}/>
+                                <Grid item xs={2} sm={4} md={5} lg={5} />
                                 <Grid item xs={10} sm={8} md={6} lg={7}>
                                     <TextField
                                         id="phone"
@@ -219,7 +219,7 @@ class Welcome extends React.Component {
                                         margin="normal"
                                     />
                                 </Grid>
-                                <Grid item xs={2}  sm={4} md={5} lg={5}/>
+                                <Grid item xs={2} sm={4} md={5} lg={5} />
                                 <Grid item xs={10} sm={8} md={6} lg={7}>
                                     <TextField
                                         id="text"
@@ -233,8 +233,8 @@ class Welcome extends React.Component {
                                 </Grid>
                             </form>
                         </Grid>
-                        <Grid item xs={6} sm={6} lg={6}/>
-                        <Grid item >
+                        <Grid item xs={6} sm={6} lg={6} />
+                        <Grid item>
                             <Button
                                 className={classes.button}
                                 raised

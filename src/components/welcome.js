@@ -38,8 +38,9 @@ const styles = theme => {
 
 class Welcome extends React.Component {
     render() {
-        const { classes } = this.props;
+        const { classes, width } = this.props;
 
+        console.log(width);
         return (
             <div>
                 <div className={classes.root}>

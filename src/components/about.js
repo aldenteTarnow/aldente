@@ -9,7 +9,7 @@ import Grid from 'material-ui/Grid';
 import aldenteImg from '../assets/aldenteView.jpg';
 import brekfast from '../assets/breakfast.jpg';
 import burger from '../assets/burgers.jpg';
-import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList';
+import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import Hidden from 'material-ui/Hidden';
 
 const styles = theme => ({
