@@ -11,6 +11,7 @@ import brekfast from '../assets/breakfast.jpg';
 import burger from '../assets/burgers.jpg';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import Hidden from 'material-ui/Hidden';
+import {grey} from 'material-ui/colors';
 
 const styles = theme => ({
     base: {
@@ -36,7 +37,7 @@ const styles = theme => ({
         flexWrap: 'wrap',
         justifyContent: 'space-around',
         overflow: 'hidden',
-        backgroundColor: '#c4c4c4'
+        // backgroundColor: '#c4c4c4'
     },
     gridList: {
         flexWrap: 'nowrap',
@@ -51,7 +52,7 @@ const styles = theme => ({
             'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
     },
     paper: {
-        background: '#c4c4c4'
+        // background: grey[800]
     }
 });
 
