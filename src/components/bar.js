@@ -13,44 +13,45 @@ import Tooltip from 'material-ui/Tooltip';
 
 import Burger from './drawer';
 
-const styles = (theme) => (
-    {
-        root: {
-            width: '100%',
-            paddingBottom: 35,
-            flex: 1,
-            'justify-content': 'space-between',
-            height: 5,
-            bottom: -15
-        },
-        flex: {
-            'justify-content': 'center'
-        },
-        flexRight: {
-            display: 'flex',
-            flex: 1,
-            flexDirection: 'row',
-            'justify-content': 'space-between',
-            maxWidth: 200,
-            maxHeight: 20
-        },
-        menuButton: {
-            textDecoration: 'none'
-        },
-        bulb: {
-            marginBottom: 25
-        },
-        absolute: {
-            position: 'absolute',
-            // bottom: theme.spacing.unit ,
-            // right: theme.spacing.unit * 3,
-        }
+const styles = theme => ({
+    root: {
+        width: '100%',
+        paddingBottom: 35,
+        flex: 1,
+        'justify-content': 'space-between',
+        height: 5,
+        bottom: -15
+    },
+    flex: {
+        'justify-content': 'center'
+    },
+    flexRight: {
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'row',
+        'justify-content': 'space-between',
+        maxWidth: 200,
+        maxHeight: 20
+    },
+    menuButton: {
+        textDecoration: 'none'
+    },
+    bulb: {
+        marginBottom: 25
+    },
+    absolute: {
+        position: 'absolute'
+        // bottom: theme.spacing.unit ,
+        // right: theme.spacing.unit * 3,
     }
-);
+});
 
 function Bar(props) {
     const { classes, changeTheme, theme } = props;
-    const themeTooltip = theme.palette.type === 'dark' ? 'Zmień na Jasny motyw' : 'Zmień na Czarny motyw';
+    const themeTooltip =
+        theme.palette.type === 'dark'
+            ? 'Zmień na Jasny motyw'
+            : 'Zmień na Czarny motyw';
 
     return (
         <div className={classes.root}>
@@ -99,10 +100,20 @@ function Bar(props) {
                         </div>
                     </Hidden>
                     <div className={classes.flexRight}>
-                        <Tooltip id="tooltip-left-start" title={themeTooltip} placement="left-start">
-                        <IconButton onClick={() => theme.palette.type === 'dark' ? changeTheme('light') : changeTheme('dark')}>
-                            <LightbulbOutline className={classes.bulb}/>
-                        </IconButton>
+                        <Tooltip
+                            id="tooltip-left-start"
+                            title={themeTooltip}
+                            placement="left-start"
+                        >
+                            <IconButton
+                                onClick={() =>
+                                    theme.palette.type === 'dark'
+                                        ? changeTheme('light')
+                                        : changeTheme('dark')
+                                }
+                            >
+                                <LightbulbOutline className={classes.bulb} />
+                            </IconButton>
                         </Tooltip>
                         <Typography
                             type="title"

@@ -13,28 +13,21 @@ import noodlesMenuImg from '../assets/noodlesMenu.jpg';
 import pizzaMenuImg from '../assets/pizzaMenu.jpg';
 import welcomePizzaImg from '../assets/welcomePizza.jpeg';
 
-const styles = theme => {
-    return {
-        card: {
-            maxWidth: '100%'
-        },
-        media: {
-            height: 250
-        },
-        media2: {
-            height: 465
-        },
-        root: {
-            flexGrow: 1,
-            padding: 10
-        },
-        paper: {
-            padding: 16,
-            textAlign: 'center',
-            color: theme.palette.text.secondary
-        }
-    };
-};
+const styles = theme => ({
+    card: {
+        maxWidth: '100%'
+    },
+    media: {
+        height: 250
+    },
+    media2: {
+        height: 465
+    },
+    root: {
+        // flexGrow: 1,
+        overflow: 'hidden'
+    }
+});
 
 class Welcome extends React.Component {
     render() {

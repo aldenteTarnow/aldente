@@ -5,54 +5,25 @@ import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { Link } from 'react-router-dom';
-import Grid from 'material-ui/Grid';
+import Hidden from 'material-ui/Hidden';
+import GridList, { GridListTile } from 'material-ui/GridList';
 import aldenteImg from '../assets/aldenteView.jpg';
 import brekfast from '../assets/breakfast.jpg';
 import burger from '../assets/burgers.jpg';
-import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
-import Hidden from 'material-ui/Hidden';
-import {grey} from 'material-ui/colors';
 
-const styles = theme => ({
-    base: {
-        // marginTop: -35,
-        height: '100vh',
-        background:
-            'url(https://images.pexels.com/photos/164168/pexels-photo-164168.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb) no-repeat center',
-        backgroundSize: 'cover'
-    },
-    card: {
-        // marginTop: '10vh',
-        // height: '72vh'
-    },
-    cardSmall: {
-        // marginTop: '7vh',
-        // height: '100vh',
-    },
-    button: {
-        textDecoration: 'none'
-    },
+
+const styles = (theme) => ({
     root: {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
         overflow: 'hidden',
-        // backgroundColor: '#c4c4c4'
+        backgroundColor: theme.palette.background.paper,
     },
     gridList: {
         flexWrap: 'nowrap',
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-        transform: 'translateZ(0)'
-    },
-    title: {
-        color: theme.palette.primary.light
-    },
-    titleBar: {
-        background:
-            'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
-    },
-    paper: {
-        // background: grey[800]
+        transform: 'translateZ(0)',
     }
 });
 
@@ -67,134 +38,73 @@ function SimpleMediaCard(props) {
         { img: burger, title: 'asdsad' },
         { img: aldenteImg, title: 'asdsad' },
         { img: burger, title: 'asdsad' }
-    ];
+    ]
     return (
-        <div className={classes.base}>
-            <div className={classes.red}>
-                <Hidden only={['sm', 'xs']}>
-                    <Grid container spacing={0} className={classes.base}>
-                        <Grid item xs={2} className={classes.cardSmall} />
-                        <Grid item xs={8} className={classes.cardSmall}>
-                            <Card className={classes.card}>
-                                <div className={classes.root}>
-                                    <GridList
-                                        className={classes.gridList}
-                                        cols={1.5}
-                                        cellHeight={562}
-                                    >
-                                        {images.map((tile, index) => (
-                                            <GridListTile key={index}>
-                                                <img
-                                                    src={tile.img}
-                                                    alt={tile.title}
-                                                />
-                                                <GridListTileBar
-                                                    title={tile.title}
-                                                    classes={{
-                                                        root: classes.titleBar,
-                                                        title: classes.title
-                                                    }}
-                                                />
-                                            </GridListTile>
-                                        ))}
-                                    </GridList>
-                                </div>
-                                <CardContent className={classes.paper}>
-                                    <Typography type="headline" component="h2">
-                                        Lizard
-                                    </Typography>
-                                    <Typography component="p">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Ab beatae dolorem
-                                        fugit ipsa laudantium molestiae sunt,
-                                        voluptate. Ad aliquam amet beatae
-                                        consequatur culpa dicta dolore eius et
-                                        exercitationem expedita hic in iste
-                                        labore laborum maxime minima natus
-                                        nihil, nulla odit officiis quae quam quo
-                                        quod similique sint sunt vel voluptatum.
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Adipisci at atque
-                                        doloribus iure molestias quis quisquam?
-                                        Ad culpa ea enim expedita iste maiores
-                                        mollitia repellat unde, voluptatibus!
-                                        Cupiditate eveniet neque officia quasi
-                                        quis rem repudiandae totam vero.
-                                        Deserunt dignissimos dolores excepturi
-                                        expedita, explicabo illum, perferendis
-                                        quas quos reprehenderit, temporibus
-                                        voluptates!
-                                    </Typography>
-                                </CardContent>
-                                <CardActions className={classes.paper}>
-                                    <Link
-                                        to="https://www.facebook.com/AlDente-pizzaspaghetti-Tarn%C3%B3w-293169260696126/"
-                                        target="_blank"
-                                        className={classes.button}
-                                    >
-                                        <Button dense color="inherit">
-                                            Facebook
-                                        </Button>
-                                    </Link>
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={2} className={classes.cardSmall} />
-                    </Grid>
+        <div>
+            <Card>
+                <Hidden mdDown>
+                    <GridList className={classes.gridList} cols={2.5} cellHeight={600}>
+                        {images.map((tile, i) => (
+                            <GridListTile key={i}>
+                                <img src={tile.img} alt=""/>
+                            </GridListTile>
+                        ))}
+                    </GridList>
                 </Hidden>
-                <Hidden only={['lg', 'xl', 'md']}>
-                    <Card className={classes.cardSmall}>
-                        <div className={classes.root}>
-                            <GridList
-                                className={classes.gridList}
-                                cols={1.5}
-                                cellHeight={375}
-                            >
-                                {images.map((tile, index) => (
-                                    <GridListTile key={index}>
-                                        <img src={tile.img} alt={tile.title} />
-                                        <GridListTileBar
-                                            title={tile.title}
-                                            classes={{
-                                                root: classes.titleBar,
-                                                title: classes.title
-                                            }}
-                                        />
-                                    </GridListTile>
-                                ))}
-                            </GridList>
-                        </div>
-                        <CardContent className={classes.paper}>
-                            <Typography type="headline" component="h2">
-                                Lizard
-                            </Typography>
-                            <Typography component="p">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Ab beatae dolorem fugit ipsa
-                                laudantium molestiae sunt, voluptate. Ad aliquam
-                                amet beatae consequatur culpa dicta dolore eius
-                                et exercitationem expedita hic in iste labore
-                                laborum maxime minima natus nihil, nulla odit
-                                officiis quae quam quo quod similique sint sunt
-                                vel voluptatum.
-                            </Typography>
-                        </CardContent>
-                        <CardActions className={classes.paper}>
-                            <Link
-                                to="https://www.facebook.com/AlDente-pizzaspaghetti-Tarn%C3%B3w-293169260696126/"
-                                target="_blank"
-                                className={classes.button}
-                            >
-                                <Button dense color="primary">
-                                    Facebook
-                                </Button>
-                            </Link>
-                        </CardActions>
-                    </Card>
+                <Hidden mdUp>
+                    <GridList className={classes.gridList} cols={1.2} cellHeight={400}>
+                        {images.map((tile, i) => (
+                            <GridListTile key={i}>
+                                <img src={tile.img} alt=""/>
+                            </GridListTile>
+                        ))}
+                    </GridList>
                 </Hidden>
-            </div>
+                <CardContent>
+                    <Typography type="headline" component="h2">
+                        Lizard
+                    </Typography>
+                    <Typography component="p">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at culpa debitis eaque enim eum fugiat hic, itaque molestias optio
+                        perferendis perspiciatis voluptas! Atque commodi deleniti, dicta et hic magni nam nisi quisquam. Dicta dignissimos ducimus explicabo, in
+                        maiores quis reprehenderit repudiandae rerum sint unde. Iste laboriosam libero nobis nulla quidem rerum temporibus vero voluptatibus
+                        voluptatum! Ab asperiores eligendi enim inventore iusto odio odit placeat quibusdam quisquam quod recusandae suscipit, ut velit? Maxime
+                        repellat, voluptatem! Ad, aliquam aspernatur, autem est et fugit magnam minima mollitia non obcaecati optio quis quo quos recusandae
+                        reiciendis repudiandae, similique tempora. Beatae rerum, totam. Accusantium aliquid aperiam aspernatur, beatae consequatur consequuntur
+                        error et, impedit magni modi mollitia nihil officia officiis pariatur perferendis quam quia rem repellat repellendus, sed sunt veritatis
+                        voluptates. Accusamus autem dolor, eius eveniet expedita explicabo facilis labore laborum modi nisi optio pariatur quasi voluptas. Nisi
+                        quae quis voluptatum! Amet at blanditiis cupiditate dolore dolorem esse fuga ipsa ipsam iure iusto laborum libero, magni maxime minima
+                        natus nihil nobis nulla, pariatur porro quaerat qui quo ratione similique tempore tenetur unde velit vero. A accusamus alias animi
+                        asperiores at atque consectetur doloremque eaque eveniet explicabo harum illum ipsa itaque nemo nesciunt nisi non odit, quas quasi
+                        quidem quo quod quos ratione rem repellat repellendus rerum sed soluta vitae voluptatem. A beatae dolor illo, ipsum obcaecati odio quis
+                        unde! Aliquam dolore excepturi exercitationem expedita repellat, voluptas? Adipisci cumque sequi ullam! Aliquam at blanditiis, corporis
+                        enim expedita nesciunt sit tenetur! Animi at cupiditate dicta hic ipsam nam rerum? Architecto assumenda aut cum, deserunt eum eveniet
+                        exercitationem facilis illum ipsa ipsam nesciunt nihil, porro quos sapiente temporibus velit veniam. Excepturi explicabo incidunt ipsa
+                        iure labore maiores maxime minima molestias quidem ratione, saepe sit. Ad autem culpa explicabo fugit ipsa molestias, quasi recusandae
+                        sapiente similique veniam? Accusamus deleniti esse quaerat temporibus unde? Ab eligendi facilis modi quidem vitae? Culpa dolor dolores
+                        eveniet laudantium magnam minima pariatur praesentium quae quaerat quam rem repellendus soluta sunt totam, unde vero vitae! Accusamus
+                        adipisci debitis delectus doloremque enim, esse et ex illo in ipsa nulla rem repellat rerum sequi, tempora! Assumenda et quia quos
+                        reprehenderit veniam. Accusantium atque consectetur, itaque iure iusto minima necessitatibus placeat quo sint vitae! Asperiores
+                        consectetur dolorem dolores eius eos excepturi facere illo impedit incidunt inventore ipsa laudantium minima nesciunt non, pariatur
+                        perferendis possimus praesentium quaerat quidem sed similique tempora, tenetur totam ullam ut veritatis vitae! Asperiores consequuntur
+                        corporis cum dicta doloribus ducimus eveniet fuga labore natus odio, perspiciatis praesentium qui quis rerum saepe sed soluta tempora
+                        veniam vitae voluptas! Animi at culpa cum deserunt dignissimos dolor eius et eum excepturi facere modi molestiae, nemo numquam
+                        perspiciatis quaerat qui quibusdam quidem ratione sed ullam. A ad asperiores cumque dicta dolorem doloribus dolorum eligendi enim hic
+                        illum impedit in ipsam iure labore molestiae obcaecati officiis optio perferendis quod repellendus, sed sint sit soluta temporibus
+                        tenetur ullam ut velit vero voluptates voluptatum. Eaque, omnis, tenetur? Cumque ducimus, eaque enim, eos est ex itaque nemo neque non
+                        quam quia quo voluptatibus.
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Link to="https://www.facebook.com/AlDente-pizzaspaghetti-Tarn%C3%B3w-293169260696126/" target="_blank">
+                        <Button dense color="accent">
+                            Facebook
+                        </Button>
+                    </Link>
+                </CardActions>
+            </Card>
         </div>
-    );
+);
 }
 
 SimpleMediaCard.propTypes = {

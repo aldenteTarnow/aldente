@@ -7,7 +7,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 import NavigationList from './navigationList';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Phone from 'material-ui-icons/Phone';
-import {green} from 'material-ui/colors';
+import { green } from 'material-ui/colors';
 import Divider from 'material-ui/Divider';
 import Button from 'material-ui/Button';
 import MobileDetect from 'mobile-detect';
@@ -43,7 +43,7 @@ class Panel extends React.Component {
 
     detect() {
         const md = new MobileDetect(navigator.userAgent);
-        const setS = (isMobile) => this.setState({isMobile});
+        const setS = isMobile => this.setState({ isMobile });
 
         if ((md.mobile() && md.phone()) || (md.mobile() && md.tablet())) {
             setS(true);
@@ -61,7 +61,7 @@ class Panel extends React.Component {
     }
 
     render() {
-        const { classes} = this.props;
+        const { classes } = this.props;
 
         const sideList = (
             <div className={classes.list}>
@@ -91,17 +91,24 @@ class Panel extends React.Component {
                     >
                         {sideList}
                     </div>
-                    <Divider/>
+                    <Divider />
                     <ListItem className={classes.color}>
                         <ListItemIcon>
                             <Phone />
                         </ListItemIcon>
-                        <ListItemText primary="+14 690 88 77"/>
-                        {
-                            this.state.isMobile ?
-                                <Button raised dense color="primary" onClick={()=>window.location='tel:14 690 88 77'}>Zadzwoń</Button> :
-                                null
-                        }
+                        <ListItemText primary="+14 690 88 77" />
+                        {this.state.isMobile ? (
+                            <Button
+                                raised
+                                dense
+                                color="primary"
+                                onClick={() =>
+                                    (window.location = 'tel:14 690 88 77')
+                                }
+                            >
+                                Zadzwoń
+                            </Button>
+                        ) : null}
                     </ListItem>
                 </Drawer>
             </div>

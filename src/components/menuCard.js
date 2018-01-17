@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import Card, { CardHeader, CardMedia } from 'material-ui/Card';
 
 import red from 'material-ui/colors/red';
+import brown from 'material-ui/colors/brown';
 
 import { Link } from 'react-router-dom';
 
@@ -23,18 +24,18 @@ const styles = theme => ({
         color: red['500']
     },
     onDefault: {
-        color: '#000000de'
+        color: '#fff'
     },
     header: {
         height: 65,
         textAlign: 'center',
-        background: '#e8e8e8'
+        background: brown[500],
     }
 });
 
 class RecipeReviewCard extends React.Component {
     state = {
-        color: 'RecipeReviewCard-onDefault-193'
+        color: null
     };
 
     changeColor(type, data) {
@@ -58,7 +59,7 @@ class RecipeReviewCard extends React.Component {
                         <div className={classes.header}>
                             <CardHeader
                                 title={title}
-                                classes={{ title: this.state.color }}
+                                classes={{ title: this.state.color || classes.onDefault }}
                             />
                         </div>
                         <CardMedia

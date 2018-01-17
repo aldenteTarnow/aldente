@@ -57,7 +57,7 @@ function NavigationList(props) {
                     <ListItemText primary="KONTAKT" />
                 </ListItem>
             </List>
-            <Divider classes={{root: classes.div}}/>
+            <Divider classes={{ root: classes.div }} />
         </div>
     );
 }
