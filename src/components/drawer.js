@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
@@ -8,11 +9,12 @@ import NavigationList from './navigationList';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Phone from 'material-ui-icons/Phone';
 import { green } from 'material-ui/colors';
-import Divider from 'material-ui/Divider';
 import Button from 'material-ui/Button';
 import MobileDetect from 'mobile-detect';
 import withWidth from 'material-ui/utils/withWidth';
 import compose from 'recompose/compose';
+import LightbulbOutline from 'material-ui-icons/LightbulbOutline';
+import Divider from 'material-ui/Divider';
 
 const styles = {
     list: {
@@ -23,6 +25,23 @@ const styles = {
     },
     color: {
         background: green['A400']
+    },
+    container: {
+        justifyContent: 'space-between',
+        flexDirection: 'column',
+        height: '100vh',
+        display: 'flex'
+    },
+    btnBottom: {
+        bottom: '-40%'
+    },
+    divider: {
+        marginBottom: 15
+    },
+    aldente: {
+        paddingLeft: '15%',
+        position: 'relative',
+        paddingRight: 0
     }
 };
 
@@ -61,13 +80,14 @@ class Panel extends React.Component {
     }
 
     render() {
-        const { classes } = this.props;
-
+        const { classes, changeThemeClick, currentTheme } = this.props;
         const sideList = (
             <div className={classes.list}>
                 <NavigationList />
             </div>
         );
+
+        const isDarkTheme = currentTheme.palette.type === 'dark';
 
         return (
             <div>
@@ -91,7 +111,7 @@ class Panel extends React.Component {
                     >
                         {sideList}
                     </div>
-                    <Divider />
+                    <Divider className={classes.divider}/>
                     <ListItem className={classes.color}>
                         <ListItemIcon>
                             <Phone />
@@ -109,6 +129,26 @@ class Panel extends React.Component {
                                 Zadzwoń
                             </Button>
                         ) : null}
+                    </ListItem>
+                    <ListItem className={classes.btnBottom}>
+                        <ListItemIcon>
+                            <LightbulbOutline />
+                        </ListItemIcon>
+                        <Button
+                            raised
+                            dense
+                            color={isDarkTheme ? 'inherit' : 'primary'}
+                            onClick={() =>
+                                isDarkTheme
+                                    ? changeThemeClick('light')
+                                    : changeThemeClick('dark')
+                            }
+                        >
+                            {isDarkTheme ? 'Jasny motyw' : 'Ciemny motyw'}
+                        </Button>
+                        <Button dense color={isDarkTheme ? 'accent' : 'default'} component={Link} to="/" className={classes.aldente} onClick={this.toggleDrawer('left', false)}>
+                            Aldente
+                        </Button>
                     </ListItem>
                 </Drawer>
             </div>

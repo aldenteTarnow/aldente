@@ -16,7 +16,7 @@ import Burger from './drawer';
 const styles = theme => ({
     root: {
         width: '100%',
-        paddingBottom: 35,
+        paddingBottom: 26,
         flex: 1,
         'justify-content': 'space-between',
         height: 5,
@@ -58,7 +58,7 @@ function Bar(props) {
             <AppBar position="fixed">
                 <Toolbar className={classes.root}>
                     <Hidden mdUp>
-                        <Burger />
+                        <Burger currentTheme={theme} changeThemeClick={changeTheme} />
                     </Hidden>
                     <Hidden smDown>
                         <div className={classes.flex}>
@@ -100,21 +100,23 @@ function Bar(props) {
                         </div>
                     </Hidden>
                     <div className={classes.flexRight}>
-                        <Tooltip
-                            id="tooltip-left-start"
-                            title={themeTooltip}
-                            placement="left-start"
-                        >
-                            <IconButton
-                                onClick={() =>
-                                    theme.palette.type === 'dark'
-                                        ? changeTheme('light')
-                                        : changeTheme('dark')
-                                }
+                        <Hidden smDown>
+                            <Tooltip
+                                id="tooltip-left-start"
+                                title={themeTooltip}
+                                placement="left-start"
                             >
-                                <LightbulbOutline className={classes.bulb} />
-                            </IconButton>
-                        </Tooltip>
+                                <IconButton
+                                    onClick={() =>
+                                        theme.palette.type === 'dark'
+                                            ? changeTheme('light')
+                                            : changeTheme('dark')
+                                    }
+                                >
+                                    <LightbulbOutline className={classes.bulb} />
+                                </IconButton>
+                            </Tooltip>
+                        </Hidden>
                         <Typography
                             type="title"
                             color="inherit"

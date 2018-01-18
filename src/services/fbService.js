@@ -14,7 +14,7 @@ const batchData = ids => {
         );
     };
     const postMetaData =
-        '?fields=story,message,created_time,description,from,link,full_picture';
+        '?fields=story,message,created_time,description,from,link,full_picture&locale=pl_PL';
     const likesData = 'likes?fields=id&summary=total_count';
 
     return Promise.all([

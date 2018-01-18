@@ -15,9 +15,6 @@ const styles = theme => ({
         width: '100%',
         maxWidth: 360,
         backgroundColor: theme.palette.background.paper
-    },
-    div: {
-        marginBottom: 10
     }
 });
 
@@ -57,7 +54,6 @@ function NavigationList(props) {
                     <ListItemText primary="KONTAKT" />
                 </ListItem>
             </List>
-            <Divider classes={{ root: classes.div }} />
         </div>
     );
 }
