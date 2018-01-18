@@ -117,6 +117,9 @@ function Bar(props) {
                                 </IconButton>
                             </Tooltip>
                         </Hidden>
+                        <Hidden mdUp>
+                            <span className={classes.bulb}></span>
+                        </Hidden>
                         <Typography
                             type="title"
                             color="inherit"

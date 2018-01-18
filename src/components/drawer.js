@@ -33,7 +33,9 @@ const styles = {
         display: 'flex'
     },
     btnBottom: {
-        bottom: '-40%'
+        position: 'relative',
+        marginTop: '100vh',
+        paddingBottom: 30
     },
     divider: {
         marginBottom: 15

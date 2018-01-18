@@ -27,9 +27,12 @@ const styles = theme => ({
         color: '#fff'
     },
     header: {
-        height: 65,
+        // height: 65,
         textAlign: 'center',
         background: brown[500],
+    },
+    root: {
+        paddingBottom: '1em'
     }
 });
 
@@ -50,7 +53,7 @@ class RecipeReviewCard extends React.Component {
         const { classes, title, url, text, path } = this.props;
 
         return (
-            <div
+            <div className={classes.root}
                 onMouseLeave={() => this.changeColor('default', classes)}
                 onMouseEnter={() => this.changeColor('hover', classes)}
             >

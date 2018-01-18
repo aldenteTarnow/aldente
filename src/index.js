@@ -29,8 +29,6 @@ const createTheme = (type = 'dark') =>
     createMuiTheme({
         palette: {
             type,
-            // primary: { main: brown[600] },
-            // secondary: { main: green['A700'] },
             primary: brown,
             secondary: green
         }

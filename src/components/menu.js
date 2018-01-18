@@ -5,9 +5,10 @@ import SwipeableViews from 'react-swipeable-views';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import PersonPinIcon from 'material-ui-icons/PersonPin';
-import About from './about';
+import SearchBar from './searchBar';
 import noodlesIcon from '../assets/noodles.png';
 import pizzaIcon from '../assets/pizza.png';
+import pizzaData from '../services/pizzaData';
 
 function TabContainer({ children, dir }) {
     return (
@@ -26,7 +27,10 @@ TabContainer.propTypes = {
 
 const styles = theme => ({
     root: {
-        // marginTop: 25
+        marginTop: 5
+    },
+    widthPaper: {
+        maxWidth: 40
     }
 });
 
@@ -83,16 +87,22 @@ class FullWidthTabs extends React.Component {
                     onChangeIndex={this.handleChangeIndex}
                 >
                     <TabContainer dir={theme.direction}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. A ad, consectetur consequatur culpa cum cupiditate
-                        deserunt enim est facilis fugit iste laborum laudantium
-                        maxime neque nesciunt odio officia pariatur quam quidem
-                        quis quisquam, quos, rerum tempora vel velit! Cumque,
-                        dolore!
+                        <SearchBar searchPharse={(search) => this.setState({search})} classes={{root:classes.widthPaper}}/>
+                        {pizzaData.map((pizza) => (
+                            <div>
+                                {pizza.name} &nbsp;
+                                {pizza.ingredients} &nbsp;
+                                {pizza.small.price}&nbsp;
+                                {pizza.small.size}&nbsp;;
+                                {pizza.big.price}&nbsp;
+                                {pizza.big.size}
+                            </div>
+                        ))}
                     </TabContainer>
                     <TabContainer dir={theme.direction}>OK</TabContainer>
                     <TabContainer dir={theme.direction}>
-                        <About />
+                        {/*<About />*/}
+                        ASD
                     </TabContainer>
                 </SwipeableViews>
             </div>
