@@ -58,7 +58,10 @@ function Bar(props) {
             <AppBar position="fixed">
                 <Toolbar className={classes.root}>
                     <Hidden mdUp>
-                        <Burger currentTheme={theme} changeThemeClick={changeTheme} />
+                        <Burger
+                            currentTheme={theme}
+                            changeThemeClick={changeTheme}
+                        />
                     </Hidden>
                     <Hidden smDown>
                         <div className={classes.flex}>
@@ -113,12 +116,14 @@ function Bar(props) {
                                             : changeTheme('dark')
                                     }
                                 >
-                                    <LightbulbOutline className={classes.bulb} />
+                                    <LightbulbOutline
+                                        className={classes.bulb}
+                                    />
                                 </IconButton>
                             </Tooltip>
                         </Hidden>
                         <Hidden mdUp>
-                            <span className={classes.bulb}></span>
+                            <span className={classes.bulb} />
                         </Hidden>
                         <Typography
                             type="title"

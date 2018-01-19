@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
@@ -113,7 +113,7 @@ class Panel extends React.Component {
                     >
                         {sideList}
                     </div>
-                    <Divider className={classes.divider}/>
+                    <Divider className={classes.divider} />
                     <ListItem className={classes.color}>
                         <ListItemIcon>
                             <Phone />
@@ -148,7 +148,14 @@ class Panel extends React.Component {
                         >
                             {isDarkTheme ? 'Jasny motyw' : 'Ciemny motyw'}
                         </Button>
-                        <Button dense color={isDarkTheme ? 'accent' : 'default'} component={Link} to="/" className={classes.aldente} onClick={this.toggleDrawer('left', false)}>
+                        <Button
+                            dense
+                            color={isDarkTheme ? 'accent' : 'default'}
+                            component={Link}
+                            to="/"
+                            className={classes.aldente}
+                            onClick={this.toggleDrawer('left', false)}
+                        >
                             Aldente
                         </Button>
                     </ListItem>

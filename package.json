@@ -6,6 +6,7 @@
     "bluebird": "^3.5.1",
     "downshift": "^1.25.0",
     "fbgraph": "^1.4.1",
+    "lodash": "^4.17.4",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.17",
     "mobile-detect": "^1.4.1",

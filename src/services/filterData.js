@@ -1,4 +1,4 @@
-const filterPizza = (search = '', data) => {
+const filterData = (search = '', data) => {
     search = search.toLowerCase();
     if (!search.length) {
         return data;
@@ -6,7 +6,7 @@ const filterPizza = (search = '', data) => {
 
     const convert = (value, type) =>
         type === 'int' ? parseInt(value) : value.toString().toLowerCase();
-    const data2 = data.map(pizza => {
+    const mapData = data.map(pizza => {
         const result = [];
         result.push(convert(pizza.id));
         result.push(convert(pizza.name));
@@ -30,7 +30,7 @@ const filterPizza = (search = '', data) => {
         });
         return result;
     };
-    data2
+    mapData
         .filter(arr => split.every(text => getIndex(text, arr)))
         .forEach(found => {
             ids.push(convert(found[0], 'int'));
@@ -39,4 +39,4 @@ const filterPizza = (search = '', data) => {
     return data.filter(pizza => ids.includes(pizza.id));
 };
 
-export default filterPizza;
+export default filterData;

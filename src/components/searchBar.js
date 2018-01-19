@@ -3,175 +3,83 @@ import PropTypes from 'prop-types';
 import Downshift from 'downshift';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import { MenuItem } from 'material-ui/Menu';
+import debounce from 'lodash/debounce';
 import { withStyles } from 'material-ui/styles';
-
-const suggestions = [
-    { label: 'Afghanistan' },
-    { label: 'Aland Islands' },
-    { label: 'Albania' },
-    { label: 'Algeria' },
-    { label: 'American Samoa' },
-    { label: 'Andorra' },
-    { label: 'Angola' },
-    { label: 'Anguilla' },
-    { label: 'Antarctica' },
-    { label: 'Antigua and Barbuda' },
-    { label: 'Argentina' },
-    { label: 'Armenia' },
-    { label: 'Aruba' },
-    { label: 'Australia' },
-    { label: 'Austria' },
-    { label: 'Azerbaijan' },
-    { label: 'Bahamas' },
-    { label: 'Bahrain' },
-    { label: 'Bangladesh' },
-    { label: 'Barbados' },
-    { label: 'Belarus' },
-    { label: 'Belgium' },
-    { label: 'Belize' },
-    { label: 'Benin' },
-    { label: 'Bermuda' },
-    { label: 'Bhutan' },
-    { label: 'Bolivia, Plurinational State of' },
-    { label: 'Bonaire, Sint Eustatius and Saba' },
-    { label: 'Bosnia and Herzegovina' },
-    { label: 'Botswana' },
-    { label: 'Bouvet Island' },
-    { label: 'Brazil' },
-    { label: 'British Indian Ocean Territory' },
-    { label: 'Brunei Darussalam' },
-];
-
-function renderInput(inputProps) {
-    const { classes, autoFocus, value, ref, ...other } = inputProps;
-
-    return (
-        <TextField
-            autoFocus={autoFocus}
-            className={classes.textField}
-            value={value}
-            inputRef={ref}
-            InputProps={{
-                classes: {
-                    input: classes.input,
-                },
-                ...other,
-            }}
-        />
-    );
-}
-
-function renderSuggestion(params) {
-    const { suggestion, index, itemProps, theme, highlightedIndex, selectedItem } = params;
-    const isHighlighted = highlightedIndex === index;
-    const isSelected = selectedItem === suggestion.label;
-
-    return (
-        <MenuItem
-            {...itemProps}
-            key={suggestion.label}
-            selected={isHighlighted}
-            component="div"
-            style={{
-                fontWeight: isSelected
-                    ? theme.typography.fontWeightMedium
-                    : theme.typography.fontWeightRegular,
-            }}
-        >
-            {suggestion.label}
-        </MenuItem>
-    );
-}
-
-function renderSuggestionsContainer(options) {
-    const { containerProps, children } = options;
-
-    return (
-        <Paper {...containerProps} square>
-            {children}
-        </Paper>
-    );
-}
-
-function getSuggestions(inputValue) {
-    let count = 0;
-
-    return suggestions.filter(suggestion => {
-        const keep =
-            (!inputValue || suggestion.label.toLowerCase().includes(inputValue.toLowerCase())) &&
-            count < 5;
-
-        if (keep) {
-            count += 1;
-        }
-
-        return keep;
-    });
-}
+import Grid from 'material-ui/Grid';
+import filterData from '../services/filterData';
 
 const styles = {
-    container: {
-        flexGrow: 1,
-        height: 200,
-        textAlign: 'center'
-    },
-    textField: {
-        width: '35%',
-    },
-    paper: {
-        width: '35%',
-        maxWidth: 50
+    root: {
+        maxHeight: 200,
+        height: 200
     }
 };
 
-function SearchBar(props) {
-    const { classes, theme } = props;
+class SearchBar extends React.Component {
+    state = {
+        searchPhrase: '',
+        data: []
+    };
 
-    return (
-        <Downshift
-            className={classes.paper}
-            classes={{root: classes.paper}}
+    filterData(searchPhrase, dataToFilter) {
+        const data = filterData(searchPhrase, dataToFilter);
 
-            render={({
-                         getInputProps,
-                         getItemProps,
-                         isOpen,
-                         inputValue,
-                         selectedItem,
-                         highlightedIndex,
-                     }) => (
-                <div className={classes.container}>
-                    {renderInput(
-                        getInputProps({
-                            classes,
-                            placeholder: 'Search a country (start with a)',
-                            id: 'integration-downshift',
-                        }),
-                    )}
-                    {isOpen
-                        ? renderSuggestionsContainer({
-                            children: getSuggestions(inputValue).map((suggestion, index) =>
-                                renderSuggestion({
-                                    suggestion,
-                                    index,
-                                    theme,
-                                    itemProps: getItemProps({ item: suggestion.label }),
-                                    highlightedIndex,
-                                    selectedItem,
-                                }),
-                            ),
-                        })
-                        : null}
-                </div>
-            )}
-        />
-    );
+        this.setState({
+            searchPhrase,
+            data
+        });
+    }
+
+    componentWillReceiveProps() {
+        this.setState({ data: this.props.dataArr });
+    }
+
+    render() {
+        const { classes, dataArr } = this.props;
+
+        const dataSearch = debounce(
+            (phrase, data) => this.filterData(phrase, data),
+            300
+        );
+
+        return (
+            <div>
+                <Grid container spacing={40}>
+                    <Grid item xs={4} />
+                    <Grid item xs={4}>
+                        <TextField
+                            label="Szukaj po nazwie/składnikach/cenie"
+                            fullWidth
+                            value={this.state.searchPharse}
+                            onChange={({ target }) =>
+                                dataSearch(target.value, dataArr)
+                            }
+                        />
+                    </Grid>
+                    <Grid item xs={4} />
+                    <Grid item xs={12} />
+                </Grid>
+                {this.state.data.map((item, i) => (
+                    <Grid container spacing={8} key={i}>
+                        <Grid item xs={12}>
+                            <Paper className={classes.root} elevation={4}>
+                                {item.name} &nbsp;
+                                {item.ingredients} &nbsp;
+                                {item.small.price}&nbsp;
+                                {item.small.size}&nbsp;;
+                                {item.big.price}&nbsp;
+                                {item.big.size}
+                            </Paper>
+                        </Grid>
+                    </Grid>
+                ))}
+            </div>
+        );
+    }
 }
 
 SearchBar.propTypes = {
-    classes: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(SearchBar);
+export default withStyles(styles)(SearchBar);

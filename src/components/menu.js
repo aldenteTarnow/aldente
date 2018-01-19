@@ -87,17 +87,7 @@ class FullWidthTabs extends React.Component {
                     onChangeIndex={this.handleChangeIndex}
                 >
                     <TabContainer dir={theme.direction}>
-                        <SearchBar searchPharse={(search) => this.setState({search})} classes={{root:classes.widthPaper}}/>
-                        {pizzaData.map((pizza) => (
-                            <div>
-                                {pizza.name} &nbsp;
-                                {pizza.ingredients} &nbsp;
-                                {pizza.small.price}&nbsp;
-                                {pizza.small.size}&nbsp;;
-                                {pizza.big.price}&nbsp;
-                                {pizza.big.size}
-                            </div>
-                        ))}
+                        <SearchBar dataArr={pizzaData} />
                     </TabContainer>
                     <TabContainer dir={theme.direction}>OK</TabContainer>
                     <TabContainer dir={theme.direction}>
