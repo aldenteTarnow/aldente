@@ -50,5 +50,430 @@
       "price": 24,
       "size": 50
     }
+  },
+  {
+    "id": 5,
+    "name": "Capricciosa",
+    "ingredients": ["sos pomidorowy", "ser", "szynka", "pieczarki", "kukurydza"],
+    "small": {
+      "price": 14,
+      "size": 30
+    },
+    "big": {
+      "price": 24,
+      "size": 50
+    }
+  },
+  {
+    "id": 6,
+    "name": "Valentina",
+    "ingredients": ["sos pomidorowy", "ser", "szynka", "salami", "oliwki", "cebula"],
+    "small": {
+      "price": 17,
+      "size": 30
+    },
+    "big": {
+      "price": 29,
+      "size": 50
+    }
+  },
+  {
+    "id": 7,
+    "name": "Pepperoni",
+    "ingredients": ["sos pomidorowy", "ser", "salami"],
+    "small": {
+      "price": 19,
+      "size": 30
+    },
+    "big": {
+      "price": 31,
+      "size": 50
+    }
+  },
+  {
+    "id": 8,
+    "name": "Pepperoni Diavolo",
+    "ingredients": ["sos pomidorowy", "ser", "salami", "papryczki pepperoni", "swieza papryka"],
+    "small": {
+      "price": 18,
+      "size": 30
+    },
+    "big": {
+      "price": 30,
+      "size": 50
+    }
+  },
+  {
+    "id": 9,
+    "name": "Chlopska",
+    "ingredients": ["sos pomidorowy", "ser", "boczek", "kabanos", "cebula"],
+    "small": {
+      "price": 18,
+      "size": 30
+    },
+    "big": {
+      "price": 29,
+      "size": 50
+    }
+  },
+  {
+    "id": 10,
+    "name": "Vegetariana",
+    "ingredients": ["sos pomidorowy", "ser", "papryka", "pieczarki", "brokuly", "kukurydza", "cebula"],
+    "small": {
+      "price": 17,
+      "size": 30
+    },
+    "big": {
+      "price": 28,
+      "size": 50
+    }
+  },
+  {
+    "id": 11,
+    "name": "Carretiera",
+    "ingredients": ["sos pomidorowy", "ser", "pomidor", "szynka", "oliwki", "cebula"],
+    "small": {
+      "price": 18,
+      "size": 30
+    },
+    "big": {
+      "price": 28,
+      "size": 50
+    }
+  },
+  {
+    "id": 12,
+    "name": "Vulcano",
+    "ingredients": ["sos pomidorowy", "ser", "ser gorgonzola", "boczek", "szynka", "papryczki pepperoni"],
+    "small": {
+      "price": 21,
+      "size": 30
+    },
+    "big": {
+      "price": 32,
+      "size": 50
+    }
+  },
+  {
+    "id": 13,
+    "name": "Tonnara",
+    "ingredients": ["sos pomidorowy", "ser", "tunczyk", "oliwki", "cebula", "kapary", "kukurydza"],
+    "small": {
+      "price": 22,
+      "size": 30
+    },
+    "big": {
+      "price": 32,
+      "size": 50
+    }
+  },
+  {
+    "id": 14,
+    "name": "Al Dente",
+    "ingredients": ["sos pomidorowy", "ser", "kurczak", "ser gorgonzola", "suszone pomidory"],
+    "small": {
+      "price": 23,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 15,
+    "name": "Tropicana",
+    "ingredients": ["sos pomidorowy", "ser", "szynka", "ananas", "kukurydza"],
+    "small": {
+      "price": 17,
+      "size": 30
+    },
+    "big": {
+      "price": 27,
+      "size": 50
+    }
+  },
+  {
+    "id": 16,
+    "name": "Tricolore",
+    "ingredients": ["sos pomidorowy", "ser", "szpinak", "pomidor", "ser feta"],
+    "small": {
+      "price": 16,
+      "size": 30
+    },
+    "big": {
+      "price": 26,
+      "size": 50
+    }
+  },
+  {
+    "id": 17,
+    "name": "Quattro Fromaggi",
+    "ingredients": ["sos pomidorowy", "ser gouda", "ser mozzarella", "ser gorgonzola", "ser parmezan"],
+    "small": {
+      "price": 22,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 18,
+    "name": "Frutti Di Mare",
+    "ingredients": ["sos pomidorowy", "ser", "owoce morza", "cebula", "kapary", "oliwki", "ser parmezan"],
+    "small": {
+      "price": 22,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 19,
+    "name": "Mexicana",
+    "ingredients": ["sos pomidorowy", "ser", "kurczak", "salami", "papryczki jalapeno", "czerwona fasola", "cebula"],
+    "small": {
+      "price": 22,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 20,
+    "name": "Texas",
+    "ingredients": ["sos BBQ", "ser", "czerwona fasola", "cebula", "grillowany boczek", "grillowana wieprzowina"],
+    "small": {
+      "price": 23,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 21,
+    "name": "Grecka",
+    "ingredients": ["sos pomidorowy", "ser", "ser feta", "mieso gyros", "oliwki"],
+    "small": {
+      "price": 22,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 22,
+    "name": "Goralska",
+    "ingredients": ["sos pomidorowy", "ser", "szynka", "boczek", "kabanos", "oscypek wedzony", "ogorek kiszony"],
+    "small": {
+      "price": 25,
+      "size": 30
+    },
+    "big": {
+      "price": 37,
+      "size": 50
+    }
+  },
+  {
+    "id": 23,
+    "name": "Wloska",
+    "ingredients": ["sos pomidorowy", "ser", "pomidor", "salami", "ser mozzarella", "swieza bazylia"],
+    "small": {
+      "price": 22,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 24,
+    "name": "Italiana",
+    "ingredients": ["sos pomidorowy", "ser", "suszone pomidory", "rukola"],
+    "small": {
+      "price": 22,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 25,
+    "name": "Farmera",
+    "ingredients": ["sos pomidorowy", "ser", "grillowany kurczak", "kabanos", "cebula", "karczochy", "papryka"],
+    "small": {
+      "price": 25,
+      "size": 30
+    },
+    "big": {
+      "price": 37,
+      "size": 50
+    }
+  },
+  {
+    "id": 26,
+    "name": "Hot Pepperoni",
+    "ingredients": ["sos pomidorowy", "ser", "salami pikantne", "papryczki jalapeno"],
+    "small": {
+      "price": 18,
+      "size": 30
+    },
+    "big": {
+      "price": 29,
+      "size": 50
+    }
+  },
+  {
+    "id": 27,
+    "name": "Parma",
+    "ingredients": ["sos pomidorowy", "ser", "szynka parmenska", "oliwki czarne", "rukola", "pomidory koktajlowe"],
+    "small": {
+      "price": 26,
+      "size": 30
+    },
+    "big": {
+      "price": 39,
+      "size": 50
+    }
+  },
+  {
+    "id": 28,
+    "name": "Polska",
+    "ingredients": ["sos pomidorowy", "ser", "duszone pieczarki", "szczypiorek"],
+    "small": {
+      "price": 21,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 29,
+    "name": "Salmone",
+    "ingredients": ["sos pomidorowy", "ser", "losos wedzony", "oliwki", "karczochy"],
+    "small": {
+      "price": 23,
+      "size": 30
+    },
+    "big": {
+      "price": 34,
+      "size": 50
+    }
+  },
+  {
+    "id": 30,
+    "name": "Francuska",
+    "ingredients": ["sos jasny", "ser", "szynka", "ser camembert", "winogrono czerwone"],
+    "small": {
+      "price": 25,
+      "size": 30
+    },
+    "big": {
+      "price": 36,
+      "size": 50
+    }
+  },
+  {
+    "id": 31,
+    "name": "Hiszpanska",
+    "ingredients": ["sos pomidorowy", "ser", "kielbasa", "papryka peperonico", "pieczona papryka"],
+    "small": {
+      "price": 26,
+      "size": 30
+    },
+    "big": {
+      "price": 39,
+      "size": 50
+    }
+  },
+  {
+    "id": 32,
+    "name": "Pesto",
+    "ingredients": ["ser", "pesto bazyliowe", "pomidor", "ser kozi"],
+    "small": {
+      "price": 23,
+      "size": 30
+    },
+    "big": {
+      "price": 33,
+      "size": 50
+    }
+  },
+  {
+    "id": 33,
+    "name": "Turecka",
+    "ingredients": ["sos turecki", "ser", "mieso kebab", "pomidor", "ogorek", "salata lodowa"],
+    "small": {
+      "price": 25,
+      "size": 30
+    },
+    "big": {
+      "price": 36,
+      "size": 50
+    }
+  },
+  {
+    "id": 34,
+    "name": "Bolognese",
+    "ingredients": ["sos bolognese", "ser", "ser parmezan", "swieza bazylia"],
+    "small": {
+      "price": 25,
+      "size": 30
+    },
+    "big": {
+      "price": 36,
+      "size": 50
+    }
+  },
+  {
+    "id": 35,
+    "name": "Bianca",
+    "ingredients": ["sos", "ser", "konfitura z czerwonej cebuli na winie", "ser camembert", "rukola"],
+    "small": {
+      "price": 26,
+      "size": 30
+    },
+    "big": {
+      "price": 39,
+      "size": 50
+    }
+  },
+  {
+    "id": 36,
+    "name": "Bianca",
+    "ingredients": ["sos", "ser", "cukinia", "ser feta", "papryka", "suszone pomidory"],
+    "small": {
+      "price": 26,
+      "size": 30
+    },
+    "big": {
+      "price": 39,
+      "size": 50
+    }
+  },
+  {
+    "id": 37,
+    "name": "Calzone",
+    "ingredients": ["sos", "ser", "4x skladniki"],
+    "small": {
+      "price": 25,
+      "size": 30
+    }
   }
 ]

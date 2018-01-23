@@ -5,13 +5,15 @@ const filterData = (search = '', data) => {
     }
 
     const convert = (value, type) =>
-        type === 'int' ? parseInt(value) : value.toString().toLowerCase();
+        type === 'int' ? parseInt(value, 10) : value.toString().toLowerCase();
     const mapData = data.map(pizza => {
         const result = [];
         result.push(convert(pizza.id));
         result.push(convert(pizza.name));
         result.push(convert(pizza.small.price));
-        result.push(convert(pizza.big.price));
+        if (pizza.big) {
+            result.push(convert(pizza.big.price));
+        }
         pizza.ingredients.forEach(ing =>
             ing.split(' ').forEach(item => result.push(convert(item)))
         );
