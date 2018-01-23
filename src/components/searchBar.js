@@ -165,6 +165,7 @@ class SearchBar extends React.Component {
                     <Grid item sm={2}/>
                     <Grid item xs={12} sm={8}>
                         <TextField
+                            autoFocus
                             label="Szukaj po nazwie, składnikach, cenie"
                             fullWidth
                             value={this.state.searchPharse}
