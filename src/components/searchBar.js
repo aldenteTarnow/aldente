@@ -151,6 +151,12 @@ class SearchBar extends React.Component {
         this.setState({ data: this.props.dataArr });
     }
 
+    handleKeyPress= ({key}) => {
+        if (key === 'Enter') {
+            document.getElementById('search').blur();
+        }
+    };
+
     render() {
         const { classes, dataArr } = this.props;
 
@@ -165,7 +171,8 @@ class SearchBar extends React.Component {
                     <Grid item sm={2}/>
                     <Grid item xs={12} sm={8}>
                         <TextField
-                            autoFocus
+                            id="search"
+                            onKeyDown={this.handleKeyPress}
                             label="Szukaj po nazwie, składnikach, cenie"
                             fullWidth
                             value={this.state.searchPharse}
