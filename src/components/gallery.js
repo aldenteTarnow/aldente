@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import GridList, { GridListTile } from 'material-ui/GridList';
-import tileData from '../services/galleryData';
+import tileData from '../metaData/galleryData';
 
 const styles = theme => ({
     root: {

@@ -93,7 +93,7 @@
   {
     "id": 8,
     "name": "Pepperoni Diavolo",
-    "ingredients": ["sos pomidorowy", "ser", "salami", "papryczki pepperoni", "swieza papryka"],
+    "ingredients": ["sos pomidorowy", "ser", "salami", "papryczki pepperoni", "świeża papryka"],
     "small": {
       "price": 18,
       "size": 30
@@ -119,7 +119,7 @@
   {
     "id": 10,
     "name": "Vegetariana",
-    "ingredients": ["sos pomidorowy", "ser", "papryka", "pieczarki", "brokuly", "kukurydza", "cebula"],
+    "ingredients": ["sos pomidorowy", "ser", "papryka", "pieczarki", "brokuły", "kukurydza", "cebula"],
     "small": {
       "price": 17,
       "size": 30
@@ -158,7 +158,7 @@
   {
     "id": 13,
     "name": "Tonnara",
-    "ingredients": ["sos pomidorowy", "ser", "tunczyk", "oliwki", "cebula", "kapary", "kukurydza"],
+    "ingredients": ["sos pomidorowy", "ser", "tuńczyk", "oliwki", "cebula", "kapary", "kukurydza"],
     "small": {
       "price": 22,
       "size": 30
@@ -262,7 +262,7 @@
   {
     "id": 21,
     "name": "Grecka",
-    "ingredients": ["sos pomidorowy", "ser", "ser feta", "mieso gyros", "oliwki"],
+    "ingredients": ["sos pomidorowy", "ser", "ser feta", "mięso gyros", "oliwki"],
     "small": {
       "price": 22,
       "size": 30
@@ -275,7 +275,7 @@
   {
     "id": 22,
     "name": "Goralska",
-    "ingredients": ["sos pomidorowy", "ser", "szynka", "boczek", "kabanos", "oscypek wedzony", "ogorek kiszony"],
+    "ingredients": ["sos pomidorowy", "ser", "szynka", "boczek", "kabanos", "oscypek wędzony", "ogórek kiszony"],
     "small": {
       "price": 25,
       "size": 30
@@ -288,7 +288,7 @@
   {
     "id": 23,
     "name": "Wloska",
-    "ingredients": ["sos pomidorowy", "ser", "pomidor", "salami", "ser mozzarella", "swieza bazylia"],
+    "ingredients": ["sos pomidorowy", "ser", "pomidor", "salami", "ser mozzarella", "świeża bazylia"],
     "small": {
       "price": 22,
       "size": 30
@@ -340,7 +340,7 @@
   {
     "id": 27,
     "name": "Parma",
-    "ingredients": ["sos pomidorowy", "ser", "szynka parmenska", "oliwki czarne", "rukola", "pomidory koktajlowe"],
+    "ingredients": ["sos pomidorowy", "ser", "szynka parmeńska", "oliwki czarne", "rukola", "pomidory koktajlowe"],
     "small": {
       "price": 26,
       "size": 30
@@ -366,7 +366,7 @@
   {
     "id": 29,
     "name": "Salmone",
-    "ingredients": ["sos pomidorowy", "ser", "losos wedzony", "oliwki", "karczochy"],
+    "ingredients": ["sos pomidorowy", "ser", "łosoś wędzony", "oliwki", "karczochy"],
     "small": {
       "price": 23,
       "size": 30
@@ -392,7 +392,7 @@
   {
     "id": 31,
     "name": "Hiszpanska",
-    "ingredients": ["sos pomidorowy", "ser", "kielbasa", "papryka peperonico", "pieczona papryka"],
+    "ingredients": ["sos pomidorowy", "ser", "kiełbasa", "papryka peperonico", "pieczona papryka"],
     "small": {
       "price": 26,
       "size": 30
@@ -418,7 +418,7 @@
   {
     "id": 33,
     "name": "Turecka",
-    "ingredients": ["sos turecki", "ser", "mieso kebab", "pomidor", "ogorek", "salata lodowa"],
+    "ingredients": ["sos turecki", "ser", "mięso kebab", "pomidor", "ogórek", "sałata lodowa"],
     "small": {
       "price": 25,
       "size": 30
@@ -431,7 +431,7 @@
   {
     "id": 34,
     "name": "Bolognese",
-    "ingredients": ["sos bolognese", "ser", "ser parmezan", "swieza bazylia"],
+    "ingredients": ["sos bolognese", "ser", "ser parmezan", "świeża bazylia"],
     "small": {
       "price": 25,
       "size": 30
@@ -470,7 +470,7 @@
   {
     "id": 37,
     "name": "Calzone",
-    "ingredients": ["sos", "ser", "4x skladniki"],
+    "ingredients": ["sos", "ser", "4x składniki"],
     "small": {
       "price": 25,
       "size": 30

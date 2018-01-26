@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Al Dente",
+    "ingredients": ["mix sałat", "grillowany kurczak", "ananas", "papryczki jalapeno", "grzanki ziołowe"],
+    "price": 16
+  },
+  {
+    "id": 2,
+    "name": "Misz Masz",
+    "ingredients": ["mix sałat", "pomidor", "ogórek", "ser feta", "oliwki czarne", "mięso gyros"],
+    "price": 16
+  },
+  {
+    "id": 3,
+    "name": "Di Tonno",
+    "ingredients": ["sałata lodowa", "tuńczyk", "kukurydza", "cebula", "pomidor", "kapary"],
+    "price": 16
+  },
+  {
+    "id": 4,
+    "name": "Calabria",
+    "ingredients": ["mix sałat", "łosoś wędzony", "karczochy", "grzanki ziołowe"],
+    "price": 16
+  },
+  {
+    "id": 5,
+    "name": "Florencja",
+    "ingredients": ["mix sałat", "suszone pomidory", "szynka parmeńska", "prażone pestki słonecznika", "ser parmezan"],
+    "price": 17
+  },
+  {
+    "id": 6,
+    "name": "Mamma Mia",
+    "ingredients": ["sałata", "ser kozi", "grzanka", "pomarańcz", "winogrono", "orzechy włoskie"],
+    "price": 16
+  }
+]

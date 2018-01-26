@@ -6,17 +6,24 @@ const filterData = (search = '', data) => {
 
     const convert = (value, type) =>
         type === 'int' ? parseInt(value, 10) : value.toString().toLowerCase();
-    const mapData = data.map(pizza => {
+    const mapData = data.map(item => {
         const result = [];
-        result.push(convert(pizza.id));
-        result.push(convert(pizza.name));
-        result.push(convert(pizza.small.price));
-        if (pizza.big) {
-            result.push(convert(pizza.big.price));
+        result.push(convert(item.id));
+        result.push(convert(item.name));
+        if (item.small) {
+            result.push(convert(item.small.price));
         }
-        pizza.ingredients.forEach(ing =>
-            ing.split(' ').forEach(item => result.push(convert(item)))
-        );
+        if (item.big) {
+            result.push(convert(item.big.price));
+        }
+        if (item.price) {
+            result.push(convert(item.price));
+        }
+        if (item.ingredients.length) {
+            item.ingredients.forEach(ing =>
+                ing.split(' ').forEach(item => result.push(convert(item)))
+            );
+        }
 
         return result;
     });
@@ -38,7 +45,7 @@ const filterData = (search = '', data) => {
             ids.push(convert(found[0], 'int'));
         });
 
-    return data.filter(pizza => ids.includes(pizza.id));
+    return data.filter(item => ids.includes(item.id));
 };
 
 export default filterData;

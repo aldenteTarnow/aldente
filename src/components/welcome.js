@@ -224,7 +224,3 @@ Welcome.propTypes = {
 };
 
 export default compose(withStyles(styles), withWidth())(Welcome);
-
-// <div>
-
-// {/*</div>*/}

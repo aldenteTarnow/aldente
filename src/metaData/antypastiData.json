@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "name": "Pieczywo czosnkowe",
+    "ingredients": ["ser"],
+    "price": 5
+  },
+  {
+    "id": 2,
+    "name": "Pieczywo czosnkowe",
+    "ingredients": ["ser", "salami"],
+    "price": 6
+  },
+  {
+    "id": 3,
+    "name": "Bruschetta",
+    "ingredients": ["pomidor", "świeża bazylia"],
+    "price": 8
+  },
+  {
+    "id": 4,
+    "name": "Bruschetta",
+    "ingredients": ["duszone pieczarki", "ser parmezan"],
+    "price": 8
+  },
+  {
+    "id": 5,
+    "name": "Bruschetta",
+    "ingredients": ["szpinak", "ser gorgonzola"],
+    "price": 8
+  },
+  {
+    "id": 6,
+    "name": "Bruschetta",
+    "ingredients": ["konfitura z czerwonej cebuli", "ser camembert"],
+    "price": 8
+  },
+  {
+    "id": 7,
+    "name": "Szpinak na oliwie",
+    "ingredients": ["ser parmezan"],
+    "price": 10
+  },
+  {
+    "id": 8,
+    "name": "Caprese",
+    "ingredients": ["ser mozzarella", "pomidor", "świeża bazylia"],
+    "price": 12
+  },
+  {
+    "id": 9,
+    "name": "2x Bruschetta",
+    "ingredients": ["pomidor"],
+    "price": 22
+  },
+  {
+    "id": 10,
+    "name": "2x Bruschetta",
+    "ingredients": ["pieczarki"],
+    "price": 22
+  },
+  {
+    "id": 11,
+    "name": "2x Bruschetta",
+    "ingredients": ["szpinak"],
+    "price": 22
+  },
+  {
+    "id": 12,
+    "name": "2x Bruschetta",
+    "ingredients": ["konfitura"],
+    "price": 22
+  },
+  {
+    "id": 13,
+    "name": "2x Pieczywo czosnkowe",
+    "ingredients": [],
+    "price": 22
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

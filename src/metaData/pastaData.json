@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Spaghetti Bolognese",
+    "ingredients": ["mięso wołowe", "sos pomidorowy", "ser parmezan"],
+    "price": 20
+  },
+  {
+    "id": 2,
+    "name": "Spaghetti Carbonara",
+    "ingredients": ["boczek wędzony", "cebula", "ser parmezan"],
+    "price": 18
+  },
+  {
+    "id": 3,
+    "name": "Spaghetti Pesto",
+    "ingredients": [],
+    "price": 18
+  },
+  {
+    "id": 4,
+    "name": "Spaghetti z Krewetkami",
+    "ingredients": ["grillowana cukinia", "pomidory koktajlowe", "oliwa z oliwek", "białe wino"],
+    "price": 24
+  },
+  {
+    "id": 5,
+    "name": "Penne z Kurczakiem",
+    "ingredients": ["sos śmietanowy"],
+    "price": 20
+  },
+  {
+    "id": 6,
+    "name": "Penne Pikantne",
+    "ingredients": ["sos pomidorowy", "salami"],
+    "price": 19
+  },
+  {
+    "id": 7,
+    "name": "Penne ze Szpinakiem",
+    "ingredients": ["sos śmietanowy", "ser gorgonzola"],
+    "price": 20
+  },
+  {
+    "id": 8,
+    "name": "Farfale Pommodoro",
+    "ingredients": ["pomidory pelatti", "świeży czosnek"],
+    "price": 17
+  },
+  {
+    "id": 9,
+    "name": "Farfale z Łososiem",
+    "ingredients": ["sos mascarpone", "koper włoski"],
+    "price": 20
+  }
+]

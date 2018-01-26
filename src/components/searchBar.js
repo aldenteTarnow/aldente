@@ -70,6 +70,14 @@ const styles = (theme) => ({
         fontSize: 17,
         fontWeight: 'bold'
     },
+    priceSingle: {
+        // marginLeft: 15,
+        marginTop: 15,
+        marginBottom: 10,
+        fontSize: 45,
+        fontWeight: 'bold',
+        color: '#0ec71a'
+    },
     tag: {
         color: '#0ec71a'
     },
@@ -142,12 +150,12 @@ class SearchBar extends React.Component {
             <div className={classes.tag}>
                 <div className={classes.size}>{item.size} cm</div>
                 <img src={sizeImg} alt=""/>
-                <div className={classes.price}>{item.price} zl</div>
+                <div className={classes.price}>{item.price} zł</div>
             </div>
         )
     }
 
-    componentWillReceiveProps() {
+    componentWillMount() {
         this.setState({ data: this.props.dataArr });
     }
 
@@ -158,12 +166,30 @@ class SearchBar extends React.Component {
     };
 
     render() {
-        const { classes, dataArr } = this.props;
+        const { classes, dataArr, type } = this.props;
 
         const dataSearch = debounce(
             (phrase, data) => this.filterData(phrase, data),
             300
         );
+
+        const displayPrices = (item, isSmall) => {
+            const classs = isSmall ? classes.smallTag : classes.secondCol;
+            if (type === 'pizza') {
+                return (
+                    <div className={classs}>
+                        {this.createPriceTag(item.small)}
+                        {item.big ? this.createPriceTag(item.big) : null}
+                    </div>
+                )
+            } else if (type === 'antipasti') {
+                return (
+                    <div className={classs}>
+                        <div className={classes.priceSingle}>{item.price} zł</div>
+                    </div>
+                )
+            }
+        };
 
         return (
             <div>
@@ -204,10 +230,7 @@ class SearchBar extends React.Component {
                                                 {item.ingredients.map((ing) => this.createChip(ing))}
                                             </div>
                                         </div>
-                                        <div className={classes.secondCol}>
-                                            {this.createPriceTag(item.small)}
-                                            {item.big ? this.createPriceTag(item.big) : null}
-                                        </div>
+                                        {displayPrices(item, false)}
                                     </div>
                                 </Paper>
                             </Grid>
@@ -235,10 +258,7 @@ class SearchBar extends React.Component {
                                     <Grid container spacing={8}>
                                         <Grid item xs={12}/>
                                         <Grid item xs={12}>
-                                            <div className={classes.smallTag}>
-                                                {this.createPriceTag(item.small)}
-                                                {item.big ? this.createPriceTag(item.big) : null}
-                                            </div>
+                                            {displayPrices(item, true)}
                                         </Grid>
                                     </Grid>
                                 </Paper>

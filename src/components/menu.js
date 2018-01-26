@@ -8,11 +8,14 @@ import PersonPinIcon from 'material-ui-icons/PersonPin';
 import SearchBar from './searchBar';
 import noodlesIcon from '../assets/noodles.png';
 import pizzaIcon from '../assets/pizza.png';
-import pizzaData from '../services/pizzaData';
 
-function TabContainer({ children, dir }) {
+// METADATA
+import pizzaData from '../metaData/pizzaData';
+import antipastiData from '../metaData/antypastiData';
+
+function TabContainer({ children }) {
     return (
-        <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+        <Typography component="div" style={{ padding: 8 * 3 }}>
             {children}
         </Typography>
     );
@@ -21,13 +24,14 @@ function TabContainer({ children, dir }) {
 const CustomImage = props => <img src={props.path} alt="" />;
 
 TabContainer.propTypes = {
-    children: PropTypes.node.isRequired,
-    dir: PropTypes.string.isRequired
+    children: PropTypes.node.isRequired
 };
 
 const styles = theme => ({
     root: {
-        marginTop: 5
+        marginTop: 5,
+        flexGrow: 1,
+        width: '100%',
     },
     widthPaper: {
         maxWidth: 40
@@ -43,15 +47,11 @@ class FullWidthTabs extends React.Component {
         this.setState({ value });
     };
 
-    handleChangeIndex = index => {
-        this.setState({ value: index });
-    };
-
     componentWillMount() {
         const tab = type => window.location.pathname.endsWith(type);
 
         if (tab('/pizza')) {
-            this.setState({ value: 0 });
+            this.setState({ value: 5 });
         } else if (tab('/makarony')) {
             this.setState({ value: 1 });
         } else if (tab('/inne')) {
@@ -69,32 +69,35 @@ class FullWidthTabs extends React.Component {
                     onChange={this.handleChange}
                     indicatorColor="accent"
                     textColor="accent"
-                    centered
+                    scrollable
+                    scrollButtons="on"
                 >
-                    <Tab
-                        icon={<CustomImage path={pizzaIcon} />}
-                        label="PIZZA"
-                    />
-                    <Tab
-                        icon={<CustomImage path={noodlesIcon} />}
-                        label="MAKARONY"
-                    />
-                    <Tab icon={<PersonPinIcon />} label="INNE" />
+                    <Tab icon={<PersonPinIcon />} label="PRZYSTAWKI"/>
+                    <Tab icon={<PersonPinIcon />} label="SAŁATY"/>
+                    <Tab icon={<PersonPinIcon />} label="ZUPY"/>
+                    <Tab icon={<PersonPinIcon />} label="PRZYSTAWKI"/>
+                    <Tab icon={<PersonPinIcon />} label="MAKARONY"/>
+                    <Tab icon={<CustomImage path={pizzaIcon} />} label="PIZZA"/>
+                    <Tab icon={<CustomImage path={noodlesIcon} />} label="DESERY"/>
+                    <Tab icon={<PersonPinIcon />} label="NAPOJE GORĄCE"/>
+                    <Tab icon={<PersonPinIcon />} label="NAPOJE ZIMNE"/>
+                    <Tab icon={<PersonPinIcon />} label="PIWO"/>
+                    <Tab icon={<PersonPinIcon />} label="WINO"/>
+                    <Tab icon={<PersonPinIcon />} label="KOKTAJLE"/>
                 </Tabs>
-                <SwipeableViews
-                    axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                    index={this.state.value}
-                    onChangeIndex={this.handleChangeIndex}
-                >
-                    <TabContainer dir={theme.direction}>
-                        <SearchBar dataArr={pizzaData} />
-                    </TabContainer>
-                    <TabContainer dir={theme.direction}>OK</TabContainer>
-                    <TabContainer dir={theme.direction}>
-                        {/*<About />*/}
-                        ASD
-                    </TabContainer>
-                </SwipeableViews>
+                {this.state.value === 0 && <TabContainer><SearchBar dataArr={antipastiData} type="antipasti" /></TabContainer>}
+                {this.state.value === 1 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 2 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 3 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 4 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 5 && <TabContainer><SearchBar dataArr={pizzaData} type="pizza" /></TabContainer>}
+                {this.state.value === 6 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 7 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 8 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 9 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 10 && <TabContainer>{this.state.value}</TabContainer>}
+                {this.state.value === 11 && <TabContainer>{this.state.value}</TabContainer>}
+
             </div>
         );
     }

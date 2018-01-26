@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import withWidth from 'material-ui/utils/withWidth';
+import compose from 'recompose/compose';
 import Card, { CardHeader, CardMedia } from 'material-ui/Card';
 
 import red from 'material-ui/colors/red';
@@ -50,11 +52,12 @@ class RecipeReviewCard extends React.Component {
     }
 
     render() {
-        const { classes, title, url, text, path } = this.props;
+        const { classes, title, url, text, path, width } = this.props;
 
+        const paddingBottom = ['xs', 'sm'].includes(width) ? '' : classes.root;
         return (
             <div
-                className={classes.root}
+                className={paddingBottom}
                 onMouseLeave={() => this.changeColor('default', classes)}
                 onMouseEnter={() => this.changeColor('hover', classes)}
             >
@@ -84,4 +87,4 @@ RecipeReviewCard.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(RecipeReviewCard);
+export default compose(withStyles(styles), withWidth())(RecipeReviewCard);
