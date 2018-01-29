@@ -60,8 +60,8 @@ class FullWidthTabs extends React.Component {
             this.setState({ value: 4 });
         } else if (tab('/makarony')) {
             this.setState({ value: 3 });
-        } else if (tab('/inne')) {
-            this.setState({ value: 2 });
+        } else if (tab('/przystawki')) {
+            this.setState({ value: 0 });
         }
     }
 

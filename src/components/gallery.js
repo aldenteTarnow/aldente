@@ -47,22 +47,43 @@ const styles = theme => ({
  *   },
  * ];
  */
+
+const makeGrid = (data) => {
+    const length = data.length;
+    const result = {
+        array: null,
+        oddArray: null
+    };
+
+    if (length % 2 === 1) {
+        result.oddArray = [data.pop()];
+        result.array = data;
+    } else {
+        result.array = data;
+    }
+    return result;
+};
+
+
 function AdvancedGridList(props) {
     const { classes } = props;
 
+    const pictures = makeGrid(tileData);
+
     return (
         <div className={classes.root}>
-            <GridList spacing={1} className={classes.gridList}>
-                {tileData.map(tile => (
-                    <GridListTile
-                        key={tile.img}
-                        cols={tile.length % 2 === 1 ? 2 : 1}
-                        rows={tile.length % 2 === 1 ? 2 : 1}
-                    >
+            <GridList spacing={1} className={classes.gridList} cellHeight={400}>
+                {pictures.array.map(tile => (
+                    <GridListTile key={tile.img} cols={tile.cols || 1}>
                         <img src={tile.img} alt={tile.title} />
                     </GridListTile>
                 ))}
             </GridList>
+            {pictures.oddArray ? <GridList spacing={1} className={classes.gridList} cellHeight={400}>
+                <GridListTile key={pictures.oddArray[0].img} cols={2}>
+                    <img src={pictures.oddArray[0].img} alt={pictures.oddArray[0].title} />
+                </GridListTile>
+            </GridList> : null}
         </div>
     );
 }

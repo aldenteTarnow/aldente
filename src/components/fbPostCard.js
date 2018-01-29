@@ -57,6 +57,9 @@ const styles = theme => ({
     },
     heartBeat: {
         color: red[400]
+    },
+    likesCount: {
+        marginLeft: 5
     }
 });
 
@@ -97,7 +100,7 @@ function FbPostCard(props) {
                         {post.likes > 0 ? (
                             <Icon className="pulse">
                                 <span className="fa fa-heartbeat">
-                                    &nbsp;{post.likes}
+                                    <strong className={classes.likesCount}>{post.likes}</strong>
                                 </span>
                             </Icon>
                         ) : (

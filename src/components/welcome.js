@@ -124,9 +124,9 @@ class Welcome extends React.Component {
                                 </Grid>
                                 <Grid item xs={3}>
                                     <MenuCard
-                                        path="/menu/inne"
-                                        title="INNE"
-                                        text="Inne Dania"
+                                        path="/menu/przystawki"
+                                        title="PRZYSTAWKI"
+                                        text="Przystawki"
                                         url={otherMenuImg}
                                     />
                                 </Grid>
@@ -206,9 +206,9 @@ class Welcome extends React.Component {
                             url={noodlesMenuImg}
                         />
                         <MenuCard
-                            path="/menu/inne"
-                            title="INNE"
-                            text="Inne Dania"
+                            path="/menu/przystawki"
+                            title="PRZYSTAWKI"
+                            text="Przystawki"
                             url={otherMenuImg}
                         />
                     </Hidden>

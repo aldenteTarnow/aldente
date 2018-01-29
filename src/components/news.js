@@ -5,6 +5,7 @@ import Grid from 'material-ui/Grid';
 import Hidden from 'material-ui/Hidden';
 import FbPost from './fbPostCard';
 import FbService from '../services/fbService';
+import Progress from './progress';
 
 const styles = theme => ({
     root: {
@@ -16,12 +17,21 @@ const styles = theme => ({
 
 class News extends React.Component {
     state = {
-        posts: []
+        posts: [],
+        isLoading: false
+    };
+
+    isLoading = (isLoading) => {
+        this.setState({isLoading});
     };
 
     componentDidMount() {
+        this.isLoading(true)
         return FbService()
-            .then(posts => this.setState({ posts }))
+            .then(posts => {
+                this.isLoading(false);
+                this.setState({ posts })
+            })
             .catch(err => {
                 console.log(err);
             });
@@ -49,6 +59,10 @@ class News extends React.Component {
 
     render() {
         const { classes } = this.props;
+
+        if (this.state.isLoading) {
+            return <Progress/>
+        }
 
         return (
             <div className={classes.root}>

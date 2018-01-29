@@ -153,7 +153,7 @@ class Welcome extends React.Component {
                             <Divider light />
                         </Grid>
                         {
-                            isOnline ? <div>
+                            isOnline ? <Grid container spacing={0}>
                                 <Grid item xs={12} className={classes.root}>
                                     <Typography type="display1" align="center">
                                         Gdzie jesteśmy
@@ -166,7 +166,7 @@ class Welcome extends React.Component {
                                 <Grid item xs={12} className={classes.root}>
                                     <Divider light />
                                 </Grid>
-                            </div> : null
+                            </Grid> : null
                         }
                         <Grid item xs={12} className={classes.root}>
                             <Grid item xs={12} className={classes.root} />

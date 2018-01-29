@@ -10,7 +10,7 @@ import InfoOutline from 'material-ui-icons/InfoOutline';
 import Collections from 'material-ui-icons/Collections';
 import Button from 'material-ui/Button';
 import MobileDetect from "mobile-detect/mobile-detect";
-import {green, grey} from "material-ui/colors/index";
+import {green} from "material-ui/colors/index";
 
 
 const styles = theme => ({

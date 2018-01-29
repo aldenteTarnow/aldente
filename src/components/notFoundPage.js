@@ -8,7 +8,7 @@ import Typography from 'material-ui/Typography';
 const style = {
     width: '100%',
     maxWidth: 'auto',
-    marginTop: '15%'
+    marginTop: '10%'
 };
 const styles = theme => ({
     button: {
