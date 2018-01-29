@@ -51,7 +51,6 @@ class App extends React.Component {
                                 changeTheme={type =>
                                     this.setState({ theme: createTheme(type) })
                                 }
-                                theme={this.state.theme}
                             />
                             <Switch>
                                 <Route exact path="/" component={Welcome} />

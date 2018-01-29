@@ -74,6 +74,7 @@ class Welcome extends React.Component {
 
     render() {
         const { classes, inputProps } = this.props;
+        const isOnline = navigator.onLine;
 
         return (
             <div className={classes.root}>
@@ -151,18 +152,22 @@ class Welcome extends React.Component {
                         <Grid item xs={12}>
                             <Divider light />
                         </Grid>
-                        <Grid item xs={12} className={classes.root}>
-                            <Typography type="display1" align="center">
-                                Gdzie jesteśmy
-                            </Typography>
-                            <Grid item xs={12} className={classes.root} />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <MapComponent isMarkerShown />
-                        </Grid>
-                        <Grid item xs={12} className={classes.root}>
-                            <Divider light />
-                        </Grid>
+                        {
+                            isOnline ? <div>
+                                <Grid item xs={12} className={classes.root}>
+                                    <Typography type="display1" align="center">
+                                        Gdzie jesteśmy
+                                    </Typography>
+                                    <Grid item xs={12} className={classes.root} />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <MapComponent isMarkerShown />
+                                </Grid>
+                                <Grid item xs={12} className={classes.root}>
+                                    <Divider light />
+                                </Grid>
+                            </div> : null
+                        }
                         <Grid item xs={12} className={classes.root}>
                             <Grid item xs={12} className={classes.root} />
                             <Typography type="display1" align="center">

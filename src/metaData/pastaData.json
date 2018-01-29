@@ -19,14 +19,14 @@
   },
   {
     "id": 4,
-    "name": "Spaghetti z Krewetkami",
-    "ingredients": ["grillowana cukinia", "pomidory koktajlowe", "oliwa z oliwek", "białe wino"],
+    "name": "Spaghetti Krewetkowe",
+    "ingredients": ["krewetki", "grillowana cukinia", "pomidory koktajlowe", "oliwa z oliwek", "białe wino"],
     "price": 24
   },
   {
     "id": 5,
-    "name": "Penne z Kurczakiem",
-    "ingredients": ["sos śmietanowy"],
+    "name": "Penne",
+    "ingredients": ["sos śmietanowy", "kurczak"],
     "price": 20
   },
   {
@@ -37,20 +37,98 @@
   },
   {
     "id": 7,
-    "name": "Penne ze Szpinakiem",
-    "ingredients": ["sos śmietanowy", "ser gorgonzola"],
+    "name": "Penne",
+    "ingredients": ["sos śmietanowy", "ser gorgonzola", "szpinak"],
     "price": 20
   },
   {
     "id": 8,
     "name": "Farfale Pommodoro",
-    "ingredients": ["pomidory pelatti", "świeży czosnek"],
+    "ingredients": ["pomidory pelatti", "czosnek"],
     "price": 17
   },
   {
     "id": 9,
-    "name": "Farfale z Łososiem",
-    "ingredients": ["sos mascarpone", "koper włoski"],
+    "name": "Farfale",
+    "ingredients": ["sos mascarpone", "koper włoski", "łosoś"],
     "price": 20
+  },
+  {
+    "id": 10,
+    "name": "Tagliatelle",
+    "ingredients": ["sos śmietanowy", "leśne grzyby"],
+    "price": 20
+  },
+  {
+    "id": 11,
+    "name": "Tagliatelle",
+    "ingredients": ["sos gorgonzola", "pieczarki", "polędwiczka"],
+    "price": 24
+  },
+  {
+    "id": 12,
+    "name": "Tagliatelle",
+    "ingredients": ["grillowana cukinia", "ser kozi", "suszone pomidory", "szynka parmeńska", "oliwa z oliwek", "ser parmezan"],
+    "price": 22
+  },
+  {
+    "id": 13,
+    "name": "Tortelini",
+    "ingredients": ["sos pieczarkowy", "szynka", "mięso"],
+    "price": 20
+  },
+  {
+    "id": 14,
+    "name": "Ravioli",
+    "ingredients": ["sos maślano-czosnkowy", "rukola", "ser riccota", "szpinak"],
+    "price": 20
+  },
+  {
+    "id": 15,
+    "name": "Ravioli",
+    "ingredients": ["sos pesto", "trzy sery"],
+    "price": 20
+  },
+  {
+    "id": 16,
+    "name": "Lasagne Bolognese",
+    "ingredients": [],
+    "price": 20
+  },
+  {
+    "id": 17,
+    "name": "Lasagne Con Spinaci",
+    "ingredients": [],
+    "price": 19
   }
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

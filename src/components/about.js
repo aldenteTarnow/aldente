@@ -41,7 +41,7 @@ function SimpleMediaCard(props) {
     return (
         <div>
             <Card>
-                <Hidden mdDown>
+                <Hidden only={['sm', 'xs']}>
                     <GridList
                         className={classes.gridList}
                         cols={2.5}
@@ -54,7 +54,7 @@ function SimpleMediaCard(props) {
                         ))}
                     </GridList>
                 </Hidden>
-                <Hidden mdUp>
+                <Hidden only={['md', 'lg', 'xl']}>
                     <GridList
                         className={classes.gridList}
                         cols={1.2}

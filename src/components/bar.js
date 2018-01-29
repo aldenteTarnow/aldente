@@ -20,7 +20,7 @@ const styles = theme => ({
         flex: 1,
         'justify-content': 'space-between',
         height: 5,
-        bottom: -15
+        bottom: -10,
     },
     flex: {
         'justify-content': 'center'
@@ -39,10 +39,8 @@ const styles = theme => ({
     bulb: {
         marginBottom: 25
     },
-    absolute: {
-        position: 'absolute'
-        // bottom: theme.spacing.unit ,
-        // right: theme.spacing.unit * 3,
+    top: {
+        top: -1
     }
 });
 
@@ -55,11 +53,10 @@ function Bar(props) {
 
     return (
         <div className={classes.root}>
-            <AppBar position="fixed">
+            <AppBar position="fixed" className={classes.top}>
                 <Toolbar className={classes.root}>
                     <Hidden mdUp>
                         <Burger
-                            currentTheme={theme}
                             changeThemeClick={changeTheme}
                         />
                     </Hidden>
@@ -68,16 +65,16 @@ function Bar(props) {
                             <Button
                                 color="contrast"
                                 component={Link}
-                                to="/menu"
+                                to="/o-nas"
                             >
-                                MENU
+                                O NAS
                             </Button>
                             <Button
                                 color="contrast"
                                 component={Link}
-                                to="/o-nas"
+                                to="/menu"
                             >
-                                O NAS
+                                MENU
                             </Button>
                             <Button
                                 color="contrast"
@@ -145,4 +142,4 @@ Bar.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Bar);
+export default withStyles(styles, {withTheme: true})(Bar);
