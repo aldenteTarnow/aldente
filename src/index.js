@@ -8,6 +8,7 @@ import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import 'font-awesome/css/font-awesome.min.css';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import Fotter from './components/fotter';
 import brown from 'material-ui/colors/brown';
 import green from 'material-ui/colors/green';
 // COMPONENTS
@@ -86,6 +87,7 @@ class App extends React.Component {
                                 />
                                 <Route component={NotFoundPage} />
                             </Switch>
+                            <Fotter/>
                         </div>
                     </Reboot>
                 </Router>
