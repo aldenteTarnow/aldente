@@ -7,7 +7,11 @@ import PersonPinIcon from 'material-ui-icons/PersonPin';
 import SearchBar from './searchBar';
 import noodlesIcon from '../assets/noodles.png';
 import pizzaIcon from '../assets/pizza.png';
-import green from 'material-ui/colors/green';
+import {green, brown, grey} from 'material-ui/colors';
+import ScrollToTop from 'react-scroll-up';
+import ReactDom from 'react-dom';
+import ArrowUp from 'material-ui-icons/ArrowUpward';
+import SnackMsg from './snackMsg';
 
 // METADATA
 import pizzaData from '../metaData/pizzaData';
@@ -41,6 +45,12 @@ const styles = theme => ({
     },
     colorButton: {
         color: green[400]
+    },
+    arrowBg: {
+        background: brown[500],
+        borderRadius: '100%',
+        width: 25,
+        height: 25
     }
 });
 
@@ -52,6 +62,10 @@ class FullWidthTabs extends React.Component {
     handleChange = (event, value) => {
         this.setState({ value });
     };
+
+    componentDidMount () {
+        ReactDom.findDOMNode(this).scrollIntoView();
+    }
 
     componentWillMount() {
         const tab = type => window.location.pathname.endsWith(type);
@@ -96,13 +110,18 @@ class FullWidthTabs extends React.Component {
                 {this.state.value === 1 && <TabContainer><SearchBar dataArr={insalataData} type="antipasti" /></TabContainer>}
                 {this.state.value === 2 && <TabContainer><SearchBar dataArr={zuppeData} type="antipasti" /></TabContainer>}
                 {this.state.value === 3 && <TabContainer><SearchBar dataArr={pastaData} type="antipasti" /></TabContainer>}
-                {this.state.value === 4 && <TabContainer><SearchBar dataArr={pizzaData} type="pizza" /></TabContainer>}
+                {this.state.value === 4 && <TabContainer><SearchBar dataArr={pizzaData} type="pizza" /><SnackMsg/></TabContainer>}
                 {this.state.value === 5 && <TabContainer>{this.state.value}</TabContainer>}
                 {this.state.value === 6 && <TabContainer>{this.state.value}</TabContainer>}
                 {this.state.value === 7 && <TabContainer>{this.state.value}</TabContainer>}
                 {this.state.value === 8 && <TabContainer>{this.state.value}</TabContainer>}
                 {this.state.value === 9 && <TabContainer>{this.state.value}</TabContainer>}
                 {this.state.value === 10 && <TabContainer>{this.state.value}</TabContainer>}
+                <ScrollToTop showUnder={160}>
+                    <div className={classes.arrowBg}>
+                        <ArrowUp color="action"/>
+                    </div>
+                </ScrollToTop>
             </div>
         );
     }

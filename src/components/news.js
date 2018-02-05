@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
+import {withStyles} from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import Hidden from 'material-ui/Hidden';
 import FbPost from './fbPostCard';
 import FbService from '../services/fbService';
 import Progress from './progress';
+import ReactDom from "react-dom";
 
 const styles = theme => ({
     root: {
@@ -22,11 +23,14 @@ class News extends React.Component {
     };
 
     isLoading = (isLoading) => {
-        this.setState({isLoading});
+        this.setState({ isLoading });
     };
 
     componentDidMount() {
-        this.isLoading(true)
+        ReactDom.findDOMNode(this).scrollIntoView();
+
+        this.isLoading(true);
+
         return FbService()
             .then(posts => {
                 this.isLoading(false);
@@ -42,14 +46,14 @@ class News extends React.Component {
         for (let i = 0; i < this.state.posts.length - 1; i++) {
             result.push(
                 <Grid container spacing={16}>
-                    <Grid item xs />
+                    <Grid item xs/>
                     <Grid item xs={5}>
-                        <FbPost post={this.state.posts[i]} />
+                        <FbPost post={this.state.posts[i]}/>
                     </Grid>
                     <Grid item xs={5}>
-                        <FbPost post={this.state.posts[i + 1]} />
+                        <FbPost post={this.state.posts[i + 1]}/>
                     </Grid>
-                    <Grid item xs />
+                    <Grid item xs/>
                 </Grid>
             );
             i += 2;
@@ -71,7 +75,7 @@ class News extends React.Component {
                         <Grid container spacing={16}>
                             {this.state.posts.map((post, i) => (
                                 <Grid item xs={12} sm={6} key={i}>
-                                    <FbPost post={post} />
+                                    <FbPost post={post}/>
                                 </Grid>
                             ))}
                         </Grid>

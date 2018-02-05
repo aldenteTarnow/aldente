@@ -19,6 +19,7 @@ import {
 } from 'react-google-maps';
 import { googleMapApiKey } from '../config';
 import CALL from '../services/fbService';
+import ReactDom from "react-dom";
 
 const styles = theme => ({
     root: {
@@ -71,6 +72,10 @@ class Welcome extends React.Component {
             [name]: event.target.value
         });
     };
+
+    componentDidMount () {
+        ReactDom.findDOMNode(this).scrollIntoView();
+    }
 
     render() {
         const { classes, inputProps } = this.props;
